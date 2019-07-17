@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>事件</title>
+		<style type="text/css">
+			input{font-size:26px;margin-top: 20px;}
+			body{background-image: url(img/webtest08img/grassland.png);}
+			#mytank{position: absolute;left:10px;top:100px}
+			center{display: none;}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="按钮一" onclick="btn()"/>
+		<input type="button" value="按钮二" id="btn2"/>
+		<input type="button" value="按钮三" id="btn3" onmouseover="btn3over()"/>
+		<hr />
+		<img id="mytank" src="img/webtest08img/right.png"/>
+		<script type="text/javascript">
+			/*一、点击按钮一，弹出信息提示框，显示“javascript事件测试一”*/
+			function btn(){
+				alert("javascript事件测试一");
+			}
+			/*二、双击按钮二，按钮文字变为“按钮二测试”*/
+			document.getElementById('btn2').ondblclick=function(){
+				this.value="按钮二测试";
+			}
+			/*三、鼠标移到按钮三上，按钮三的背景和文字颜色改变；
+			 * 同时，单击按钮三，弹出框显示“javascript事件测试三”；*/
+			function btn3over(){
+				var btn = document.getElementById("btn3");
+				btn.style.backgroundColor = "orange";
+				btn.style.color = "red";
+			} 
+			document.getElementById('btn3').onmouseout=function(){
+				var btn = document.getElementById("btn3");
+				btn.style.backgroundColor = "";
+				btn.style.color = "black";
+			}
+			document.getElementById("btn3").addEventListener(
+				'click',
+				function(){
+					alert("javascript事件测试三");
+			});
+			
+			var mytank = document.getElementById('mytank');
+			window.addEventListener(
+				'keydown',
+				function(e){
+					console.log(e.keyCode);
+					if(e.keyCode == 68 || e.keyCode == 39){
+						document.getElementById('mytank').src = "img/webtest08img/right.png";
+						mytank.style.left = (mytank.offsetLeft+10)+'px'; 
+					}
+					if(e.keyCode == 65 || e.keyCode == 37){
+						document.getElementById('mytank').src = "img/webtest08img/left.png";
+						mytank.style.left = (mytank.offsetLeft-10)+'px'; 
+					}
+					if(e.keyCode == 83 || e.keyCode == 40){
+						document.getElementById('mytank').src = "img/webtest08img/down.png";
+						mytank.style.top = (mytank.offsetTop+10)+'px'; 
+					}
+					if(e.keyCode == 87 || e.keyCode == 38){
+						document.getElementById('mytank').src = "img/webtest08img/up.png";
+						mytank.style.top = (mytank.offsetTop-10)+'px'; 
+					}
+				});		
+			
+		</script>
+	</body>
+</html>

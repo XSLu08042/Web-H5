@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册练习</title>
+		<link rel="stylesheet" href="css/webtest03.css" />
+		<style>
+			center{display: none;}
+			select{
+				border:none;
+				outline: none;
+				margin-left: -10px;
+				margin-right: -12px;
+				font-family: "微软雅黑";
+				font-size: 10px;
+				color: #666666;
+			}
+		</style>
+	</head>
+	<body>
+		<!--top begin-->
+		<div class="top">
+			<div class="log">
+			<img src="img/webtest03img/log.png" /><span>欢迎注册</span>
+			</div>
+		</div>
+		<!--top end-->
+		<!--content begin-->
+		<div class="forml">
+			<form name="register" method="post" action="" >
+				<ul>
+					<li>用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名
+						<input type="text" name="username" placeholder="您的用户名和登录名"/>
+					</li>
+					<li>设&nbsp;置&nbsp;密&nbsp;码
+						<input type="password" name="password" placeholder="建议至少使用两种字符组合"/>
+						<span><img src="img/webtest03img/jianpan.png"></span>
+					</li>
+					<li>确&nbsp;认&nbsp;密&nbsp;码
+						<input type="password" name="repassword" placeholder="请再次输入密码"/>
+						<span><img src="img/webtest03img/jianpan.png"></span>
+					</li>
+					<li><select>
+						  <option value ="volvo">中国10086</option>
+						  <option value ="saab">电信10000</option>
+						  <option value="opel">联通10010</option>
+						</select>
+						<input type="tel" name="phone" placeholder="建议使用常用手机"/></li>
+					<li class="yz"><span>验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;&nbsp;码</span><input type="text" name="yz" placeholder="请输入验证码"/>
+						<span class="yz01"><img src="img/webtest03img/yanzheng.png"></span>
+					</li>
+					<li class="read">
+						<input type="checkbox" name="agreen"><span>&nbsp;&nbsp;阅读并同意</span>
+						<span><a href="">《京东用户注册协议》</a></span><span><a href="">《隐私政策》</a></span>
+					</li>
+					<li class="registbt">
+						<input type="button" value="立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册"/>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<!--content end-->
+	</body>
+</html>

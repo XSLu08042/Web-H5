@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.rotate.min.js" ></script>
+		<style>
+			body{
+				background: black;
+				padding: 0;
+				margin: 0;
+			}
+			img{
+				height: 120px;
+				width: 120px;
+			}
+			#wukong{
+				position: absolute;
+				z-index: 999;
+			}
+			#baowu{
+				margin-top: 200px;
+				margin-left: 500px;
+			}
+			center{display: none;}
+		</style>
+		<script>
+			$(function(){
+				var isbig=false;
+				$(document).click(function(e){
+					var X=e.clientX-60;
+					var Y=e.clientY-60;
+					var xx=$("#wukong").offset().left;
+					var yy=$("#wukong").offset().top;
+//					//旋转
+//					var zx=Math.abs(xx-X);
+//					var zy=Math.abs(yy-Y);
+//					var z = Math.sqrt(Math.pow(zx,2)+Math.pow(zy,2));
+//			        var cos = zy/z;
+//			        var radina = Math.acos(cos);//用反三角函数求弧度
+//			        var angle = Math.floor(180/(Math.PI/radina));//将弧度转换成角度
+//					//alert(angle)
+//					//变身
+//					//$("#wukong").rotate({ animateTo: angle });
+//					if(X>xx&&Y>yy){//鼠标在第四象限
+//			            angle = 180 - angle;
+//			        }
+//			
+//			        if(X==xx&&Y>zy){//鼠标在y轴负方向上
+//			            angle = 180;
+//			        }
+//			
+//			        if(X>xx&&Y==zy){//鼠标在x轴正方向上
+//			            angle = 90;
+//			        }
+//			
+//			        if(X<xx&&Y>yy){//鼠标在第三象限
+//			            angle = 180+angle;
+//			        }
+//			
+//			        if(X<xx&&Y==yy){//鼠标在x轴负方向
+//			            angle = 270;
+//			        }
+//			
+//			        if(X<xx&&Y<yy){//鼠标在第二象限
+//			            angle = 360 - angle;
+//			        }
+//			       // alert(angle)
+//					$("#wukong").rotate({ animateTo: angle });
+					if(isbig==false){
+						//旋转
+						//$("#wukong").attr("src","img/webtest17-2img/19_5_13_14_48_28.gif")
+						//向左向右
+							if(xx<X){
+								$("#wukong").attr("src","img/webtest17-2img/player_right.gif")
+							}else{
+								$("#wukong").attr("src","img/webtest17-2img/player_left.gif")
+							}					
+						}else{
+							//旋转
+							//$("#wukong").attr("src","img/webtest17-2img/playerbig_xz.gif")
+							//向左向右
+							if(xx<X){
+								$("#wukong").attr("src","img/webtest17-2img/playerbig_right.gif")
+						}else{
+								$("#wukong").attr("src","img/webtest17-2img/playerbig_left.gif")
+							}
+						}
+					$("#wukong").stop().animate({top:Y,left:X},2000,function(){
+						//吃宝物
+						if(440<X&&X<560&&140<Y&&Y<260){
+								isbig=true;
+								$("#baowu").remove();
+								$("#wukong").attr("src","img/webtest17-2img/playerbig_right.gif")
+						}else{
+							$("#wukong").attr("src","img/webtest17-2img/player3.gif")
+						}																			
+					})
+					//$("#wukong").rotate({ animateTo: 45 });	
+					
+				})
+				//双击放大招
+				$(document).dblclick(function(){
+					$("#wukong").attr("src","img/webtest17-2img/player3.gif")
+				})
+				
+			})
+		</script>
+	</head>
+	<body>
+		<img id="wukong" src="img/webtest17-2img/player3.gif" />
+		<img id="baowu"  src="img/webtest17-2img/pet.gif"/>
+	</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的网站</title>
+		<script src="js/jquery-3.4.0.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+						function launchFullscreen(element) {
+							if(element.requestFullscreen) {
+								element.requestFullscreen()
+							} else if(element.mozRequestFullScreen) {
+								element.mozRequestFullScreen()
+							} else if(element.msRequestFullscreen) {
+								element.msRequestFullscreen()
+							} else if(element.webkitRequestFullscreen) {
+								element.webkitRequestFullScreen()
+							}
+						}
+						document.addEventListener("fullscreenchange", function(e) {
+								if(document.fullscreenElement) {
+									console.log('进入全屏')
+								} else {
+									console.log('退出全屏')
+								}
+							}) 
+
+						})
+		</script>
+		<style>
+			body {
+				background-color: #11325B;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			a {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
+			
+			a:hover {
+				color: #FF0000;
+			}
+			
+			center {
+				display: none;
+			}
+			
+			.mytitle {
+				text-align: center;
+			}
+			
+			#dowebok {
+				width: 90%;
+				margin: 0 auto;
+				font-size: 14px;
+			}
+			
+			#dowebok li {
+				float: left;
+				width: 30%;
+				margin-left: 2%;
+				padding-top: 2%;
+			}
+			
+			#dowebok li img {
+				width: 250px;
+				height: 150px;
+			}
+			
+			#dowebok li .dt {
+				width: 100%;
+				text-align: center;
+			}
+			
+			#dowebok li {
+				list-style-type: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 class="mytitle">169000902徐思路</h1>
+		<ul id="dowebok">
+			<li>
+				<div>
+					<a href="webtest01.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest01.png" alt="图片1"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest01.html" target="_blank">作品1：普通网页div布局</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest02.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest02.png" alt="图片2"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest02.html" target="_blank">作品2：表格练习</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest03.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest03.png" alt="图片3-1"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest03.html" target="_blank">作品3-1：注册页面</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest04.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest04.png" alt="图片3-2"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest04.html" target="_blank">作品3-2：登陆页面</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest06.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest06.png" alt="图片4"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest06.html" target="_blank">练习4：js基础</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest07.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest07.png" alt="图片5"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest07.html" target="_blank">练习5：时钟</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest05.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest05.png" alt="图片6"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest05.html" target="_blank">练习6：重庆工程学院官网</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest08.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest08.png" alt="图片7"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest08.html" target="_blank">练习7：js事件</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest09.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest09.png" alt="图片8-1"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest09.html" target="_blank">练习8： DOM一</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest10.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest10.png" alt="图片8-2"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest10.html" target="_blank">练习8 DOM二</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest11-1.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest11-1.png" alt="图片9-1"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest11-1.html" target="_blank">练习9 表单验证</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest11-2.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest11-2.png" alt="图片9-2"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest11-2.html" target="_blank">练习9 全选</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest12.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest12.png" alt="图片10"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest12.html" target="_blank">练习10</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest13.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest13.png" alt="图片11"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest13.html" target="_blank">练习11</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest14.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest14.png" alt="图片12"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest14.html" target="_blank">练习12</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest15.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest15.png" alt="图片13"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest15.html" target="_blank">练习13</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest16.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest16.png" alt="图片14"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest16.html" target="_blank">练习14</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest17-1.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest17-1.png" alt="图片15-1"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest17-1.html" target="_blank">练习15-1</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest17-2.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest17-2.png" alt="图片15-2"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest17-2.html" target="_blank">练习15-2</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="webtest18.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest18.png" alt="图片16"></a>
+				</div>
+				<div class="dt">
+					<a href="webtest18.html" target="_blank">练习16 ajax获取新闻</a>
+				</div>
+			</li>
+			<li>
+				<div>
+					<a href="bookindex.html" target="_blank"><img data-original="img/tibet-1.jpg" src="webtestimg/webtest19.png" alt="图片17"></a>
+				</div>
+				<div class="dt">
+					<a href="bookindex.html" target="_blank">练习17 bookshop</a>
+				</div>
+			</li>
+		</ul>
+
+	</body>
+
+</html>

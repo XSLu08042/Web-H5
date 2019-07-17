@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>事件-练习</title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<style type="text/css">
+			body {
+				font-size: 13px;
+				line-height: 25px;
+			}
+			center{display: none;}
+			table {
+				border-top: 1px solid #333;
+				border-left: 1px solid #333;
+				width: 400px;
+			}
+			
+			td {
+				border-right: 1px solid #333;
+				border-bottom: 1px solid #333;
+				text-align: center;
+			}
+			
+			.title {
+				font-weight: bold;
+				background-color: #cccccc;
+			}
+			
+			input text {
+				width: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//增加
+				$(".addOrder").click(function(){
+					var $row_index = $("#order tr").length - 1; //新插入行在表格中的位置	
+					var $newRow=$("#order tr").eq(-2); //插入的行
+					str = "<tr id='del'><td>防滑真皮休闲鞋</td><td>"+$row_index+"</td><td>&yen;49.00</td><td><input type='button' value='删除' id='delRow' />&nbsp;<input id='edit" + $row_index + "' type='button' value='修改' class='editRow'/></td>";
+					 //当前行之后插入一行  
+	               	$newRow.after(str);	
+				});
+				
+				//删除
+				$("#order").on("click","#delRow",function(){
+					var $index=$(this).parents("tr").index();
+					//alert($index)
+					$("#order tr").eq($index).remove();					
+				})
+				
+				//修改
+				$("#order").on("click",".editRow",function(){
+					var $index = $(this).parents("tr").index(); //获取当前tr的下标				 
+					//alert($index)
+					var $col=$(this).parents("tr").children('td');
+					var $text=$(this).parents("tr").children('td').eq(1).text();
+					//alert($text) 
+					$col.eq(1).html("<input name='num" + $index + "' style='width:40px;' type='text' value='" + $text + "' />");	
+					$col.children("input").eq(2).remove();
+					$col.children("input").eq(1).after("<input id='edit" + $index + "' type='button' value='确定' class='upRow'/>");				
+				})
+				
+				//确定
+				$("#order").on("click",".upRow",function(){
+					var $index = $(this).parents("tr").index(); //获取当前tr的下标				 
+					//alert($index)
+					var $col=$(this).parents("tr").children('td');
+					var $text=$(this).parents("tr").children('td').children('input').val();
+					//alert($text)
+					//alert($col.children('input').html())
+					$col.eq(1).html("<td style='border:0 solid #333;'>" +$text+"</td>");
+					//alert($col.children('input').html())
+					$col.children("input").eq(1).after("<input id='edit" + $index + "' type='button' value='修改' class='editRow()'/>");				
+					$col.children("input").eq(-2).remove(); 
+				})
+				
+				//hover效果
+				$("#order").on("mouseenter","#del",function(){
+					$(this).css('background-color','yellow'); 
+				})
+				$("#order").on("mouseleave","#del",function(){
+					$(this).css('background-color','white');  
+				})
+			});
+			
+			
+		</script>  
+	</head>
+
+	<body>
+		<table border="0" cellspacing="0" cellpadding="0" id ="order">
+			<tr class="title">
+				<td>商品名称</td>
+				<td>数量</td>
+				<td>价格</td>
+				<td>操作</td>
+			</tr>
+			<tr id="del">
+				<td>防滑真皮休闲鞋</td>
+				<td>12</td>
+				<td>&yen;568.50</td>
+				<td><input name="rowdel" type="button" value="删除" id="delRow"/>
+					<input id="edit1" type="button" value="修改" class="editRow"/></td>
+			</tr>
+			<tr>
+				<td colspan="4" style="height:30px;">
+					<input class="addOrder" name="addOrder" type="button" value="增加订单"  /></td>
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>欢迎来到ebook shop线上书店</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<!--lun-->
+	<script src="http://www.jq22.com/js/jq.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/yyui.js"></script>
+	<script type="text/javascript" src="js/toTop.js"></script>
+	<link href="css/yyui.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--huo-->
+	<link href="layui/css/layui.css" rel="stylesheet" />
+	<script type="text/javascript" src="layui/layui.js"></script>
+
+	<style type="text/css">
+		center{
+				display: none;
+			}
+		/*lun*/
+		
+		.actGotop a,
+		.actGotop a:link {
+			width: 150px;
+			height: 195px;
+			display: inline-block;
+			background: url(images/blog7year_gotop.png) no-repeat;
+			_background: url(images/blog7year_gotop.gif) no-repeat;
+			outline: none;
+		}
+		
+		.actGotop a:hover {
+			background: url(images/blog7year_gotopd.gif) no-repeat;
+			outline: none;
+		}
+		/*huo*/
+		
+		.section img {
+			width: 100px;
+			height: 150px;
+		}
+		
+		.bookname {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		
+		.layui-carousel {
+			position: relative;
+			top: 10px;
+			width: 1080px;
+			height: 510px;
+			text-align: center;
+			line-height: 510px;
+		}
+		
+		.layui-carousel img {
+			width: 1080px;
+			height: 510px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="actGotop">
+		<a href="javascript:;" title="返回顶部"></a>
+	</div>
+
+	<div class="wrap">
+		<div class="header">
+			<div class="headertop_desc">
+				<div class="account_desc"> 
+					<iframe width="270" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&icon=1&py=chongqing&wind=1&num=1&site=12" style="position: absolute; left: 150px;"></iframe>
+					<ul>
+						<li>
+							<a href="reg.html">注册</a>
+						</li>
+						<li>
+							<a href="login.html">登录</a>
+						</li>
+						<li>
+							<a class="zhuxiao">注销</a>
+						</li>
+						<li>
+							<a href="#">我的账户</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header_top">
+				<div class="logo">
+					<a href="bookindex.html"><img src="images/logo.png" alt="" /></a>
+				</div>
+				<div class="cart">
+					<p>欢迎来到我们的线上商店! <span>Cart:</span>
+						<div id="dd" class="wrapper-dropdown-2"> 0 - ￥0.00
+							<ul class="dropdown">
+								<li>还没有一件商品被放入购物车</li>
+							</ul>
+						</div>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header_bottom">
+				<div class="menu">
+					<ul>
+						<li>
+							<a href="bookindex.html">首页</a>
+						</li>
+						<li>
+							<a href="about.html">关于我们</a>
+						</li>
+						<li>
+							<a href="contact.html">联系我们</a>
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="search_box">
+					<form>
+						<input type="text" value="输入书籍名称或作者搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '输入书籍名称或作者搜索';}"><input type="submit" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="layui-carousel" id="test1">
+				<ul carousel-item>
+					<li>
+						<a href="#"><img src="images/1.jpg" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/2.jpg" /></a>
+					</li>
+				</ul>
+			</div>
+			<div class="main">
+				<div class="content">
+					<div class="section group">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		 <div class="footer">
+   	  <div class="wrap">	
+	    <div class="section2 group">
+				<div class="col_1_of_4 span_1_of_4">
+						<h4>关于网站</h4>
+						<ul>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>为什么购买?</h4>
+						<ul>
+						<li><a href="#">7天无理由退货</a></li>
+						<li><a href="#">15天退货保障</a></li>
+						<li><a href="#">30天换货保障</a></li>
+						<li><a href="#">次日达</a></li>
+						<li><a href="#">1小时派单快速响应</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>关注我们</h4>
+						<ul>
+							<li><a href="#">微信</a></li>
+                            <li><a href="#">帮助</a></li>
+							<li><span>123-456789</span></li>							
+						</ul>
+				</div>
+			</div>			
+      </div>
+        <div class="copy_right">
+				<p>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="#">sunny</a></p>
+		   </div>
+    </div>
+		<script>
+			$(function() {
+				//qi-------------------------
+				$("#dd").click(function() {
+					if($("#dd").html().charAt(1) == '0' & $(".dropdown li").css("display") == "none") {
+						//alert("dd")
+						$(".dropdown li").css({
+							"display": "block"
+						});
+					} else {
+						//alert("kk")
+						$(".dropdown li").css({
+							"display": "none"
+						});
+					}
+				})
+				//huo-------------------------
+				$.ajax({
+					//请求方式  
+					type: "GET",
+					//文件位置  
+					url: "https://raw.githubusercontent.com/XSLu08042/Web-H5/master/bookshoop_json.json",
+					//返回数据格式为json,也可以是其他格式如  
+					dataType: "json",
+					//请求成功后要执行的函数，拼接html  
+					success: function(data) {
+						//console.log(data.books.length)
+						for(var i = 0; i < data.books.length; i++) {
+
+							$(".section.group").append("<div class='grid_1_of_4 images_1_of_4'><a href='preview.html?booksId="+data.books[i].id+"'><img title='"+data.books[i].name+"' src='" + data.books[i].img + "' alt='' /></a><h2 title='"+data.books[i].name+"' class='bookname'>" + data.books[i].name + "</h2><div class='price-details'><div class='price-number'><p><span class='rupees'>¥" + data.books[i].danjia + "</span></p></div><div class='add-cart'>	<h4><a href='#'>加入购物车</a></h4></div><div class='clear'></div></div>")
+							//console.log(i) 
+						}
+					}
+				});
+				layui.use('carousel', function() {
+					var carousel = layui.carousel;
+					//建造实例
+					carousel.render({
+						elem: '#test1',
+						width: '100%' //设置容器宽度
+							,
+						height: '510px',
+						arrow: 'always' //始终显示箭头
+						//,anim: 'updown' //切换动画方式
+					});
+				});
+
+			})
+		</script>
+</body>
+
+</html>

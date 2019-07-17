@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习4：js基础</title>
+		<style>
+			body{
+				font-size: 30px;
+				text-align: center;
+			}
+			center{display: none;}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			print();
+			function print(count){
+				var count=prompt("请输入要打印的行数（打印菱形请输入奇数）：");
+				
+				for(var i = 1; i <= count; i++) {									
+					for(var j = 0; j < i; j++) {				
+						document.write('&nbsp'+'&nbsp'+'*'+'&nbsp'+'&nbsp');
+					}					
+					document.write('<br>');
+				 }
+				
+				//打印平行四边形
+				for(var i = 1; i <= count; i++) {				
+					for(var v = 1; v < 12 - i;v++) {				
+						document.write('&nbsp;&nbsp;');
+					}
+					for(var j = 0; j < count; j++) {				
+						document.write('*'+'&nbsp'+'&nbsp'+'&nbsp');
+					}					
+					document.write('<br>');				
+				 }
+				//打印菱形
+				//只能为单行
+				for(var i=0;i<(count-1)/2;i++){
+		            for(var k=(count-1)/2;k>i;k--){
+		               document.writeln(" ");
+		            }
+		            for(var j=0;j<2*i+1;j++){
+		               document.writeln("*");
+		            }
+		            document.writeln("</br>");
+		         }
+		
+		         for(var i=(count-1)/2+1;i>0;i--){
+		            for(var k=(count-1)/2;k>=i;k--){
+		               document.writeln(" ");
+		            }
+		            for(var j=0;j<2*i-1;j++){
+		               document.writeln("*");
+		            }
+		            document.writeln("</br>")
+		         }
+
+			}
+			
+</script>
+
+		
+	</body>
+</html>

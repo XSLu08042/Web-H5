@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Preview</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<script src="js/jquery-3.4.0.min.js"></script>
+	<script src="http://www.jq22.com/js/jq.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/yyui.js"></script>
+	<script type="text/javascript" src="js/toTop.js"></script>
+	<link href="css/yyui.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--放大镜-->
+	<!--<script src="js/bigbig.js"></script>  -->
+	<script type="text/javascript" src="js/bigbig.js"></script>
+	<style type="text/css">
+		center{
+				display: none;
+			}
+		.actGotop a,
+		.actGotop a:link {
+			width: 150px;
+			height: 195px;
+			display: inline-block;
+			background: url(images/blog7year_gotop.png) no-repeat;
+			_background: url(images/blog7year_gotop.gif) no-repeat;
+			outline: none;
+		}
+		
+		.actGotop a:hover {
+			background: url(images/blog7year_gotopd.gif) no-repeat;
+			outline: none;
+		}
+		/*放大镜*/
+		
+		.magnifierContainer {
+			display: flex;
+			margin-top: 30px;
+		}
+		
+		.imgMedium {
+			position: relative;
+		}
+		
+		.imgLeft .magnifier {
+			position: absolute;
+			display: none;
+			width: 100px;
+			height: 100px;
+		}
+		
+		.mediumContainer {
+			width: 260px;
+			height: 330px;
+			border: 1px solid #eee;
+			overflow: hidden;
+		}
+		
+		#zhezhao {
+			width: 260px;
+			height: 330px;
+			background: transparent;
+			position: absolute;
+			top: 0;
+			border: 1px solid transparent;
+		}
+		
+		#zhezhao:hover {
+			cursor: move;
+		}
+		
+		.img_u {
+			width: 460px;
+			height: 530px;
+			border: 1px solid #eee;
+			float: left;
+			margin-left: 15px;
+			overflow: hidden;
+			display: none;
+		}
+		
+		#pic{
+			position: relative;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="actGotop">
+		<a href="javascript:;" title="返回顶部"></a>
+	</div>
+
+	<div class="wrap">
+		<div class="header">
+			<div class="headertop_desc">
+				<div class="account_desc">
+					<iframe width="270" scrolling="no" height="18" frameborder="0" allowtransparency="true" src="//i.tianqi.com/index.php?c=code&id=1&icon=1&py=chongqing&wind=1&num=1&site=12" style="position: absolute; left: 150px;"></iframe>
+
+					<ul>
+						<li>
+							<a href="#">注册</a>
+						</li>
+						<li>
+							<a href="#">登录</a>
+						</li>
+						<li>
+							<a href="#">注销</a>
+						</li>
+						<li>
+							<a href="#">我的账户</a>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header_top">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+				</div>
+				<div class="cart">
+					<p>欢迎来到我们的线上商店! <span>Cart:</span>
+						<div id="dd" class="wrapper-dropdown-2"> 0 - ￥0.00
+							<ul class="dropdown">
+								<li>还没有一件商品被放入购物车</li>
+							</ul>
+						</div>
+					</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="header_bottom">
+				<div class="menu">
+					<ul>
+						<li>
+							<a href="bookindex.html">首页</a>
+						</li>
+						<li>
+							<a href="about.html">关于我们</a>
+						</li>
+						<li>
+							<a href="contact.html">联系我们</a>
+						</li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="search_box">
+					<form>
+						<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="main">
+				<div class="content">
+					<div class="section group">
+						<div class="cont-desc span_1_of_2">
+							<div class="product-details">
+								<div class="grid images_3_of_2" id="pic">
+									<div id="container">
+										<div id="products_example">
+											<div id="products" style="width: 260px;height: 320px; z-index: 99;">
+												<div class="magnifierContainer">
+													<div class="imgLeft">
+														<!-- 中号图片 -->
+														<div class="imgMedium" id="imgMedium">
+															<!-- 放大镜 -->
+															<div class="magnifier" id="magnifier">
+																<img src="http://product.dangdang.com/images/zoom_pup.png">
+															</div>
+															<!-- 图片 -->
+															<div class="mediumContainer" id="mediumContainer">
+																<!--<img src="http://img3m3.ddimg.cn/2/21/22628333-1_w_2.jpg">-->
+															</div>
+															<div id="zhezhao"></div>
+														</div>
+
+													</div>
+													<div class="imgRight">
+														<!-- 大图 -->
+														<div class="img_u" id="img_u">
+															<!--<img src="http://img3m3.ddimg.cn/2/21/22628333-1_u_2.jpg">-->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="desc span_3_of_2" id="inf">
+
+									<div>
+										<ul class="desc_ul">
+											<!--<li>单价: <span style="font-size: 30px;color: #AC0000;">￥998.00</span></li><br /><br />
+											<li>原价: <span style="text-decoration: line-through;">￥12500.00</span></li><br /><br />
+											<li>库存: <input style="width:80px;font-size: 18px;" type="text" value="1234" />件</li><br /><br />-->
+											<li>购买数量: -<input style="width:50px;font-size: 18px;" type="text" value="1" />+</li>
+										</ul>
+									</div>
+									<div class="share-desc">
+										<div class="button"><span><a href="#">加入购物车</a></span></div>
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="product_desc">
+								<div id="horizontalTab">
+									<ul class="resp-tabs-list">
+										<li>商品描述</li>
+										<div class="clear"></div>
+									</ul>
+									<div class="resp-tabs-container">
+										<div class="product-desc">
+											<p>
+												<div class="yyui_tab_card">
+													<ul>
+														<li class="yyui_tab_title_this">商品描述</li>
+														<li class="yyui_tab_title">商品评价</li>
+													</ul>
+
+													<div class="yyui_tab_content_this">
+														<div class="tab-con">
+															<div data-tab="item" style="display: block;">
+																<div class="p-parameter" clstag="shangpin|keycount|product|canshuqu_3">
+																	<ul id="parameter2" class="p-parameter-list">
+																		<!--<li title="人民邮电出版社" clstag="shangpin|keycount|product|chubanshe_3">出版社：
+																			<a target="_blank" title="人民邮电出版社" href="//book.jd.com/publish/人民邮电出版社_1.html">人民邮电出版社</a>
+																		</li>
+																		<li title="9787115390592">ISBN：9787115390592</li>
+																		<li title="6">版次：6</li>
+																		<li title="11917487">商品编码：11917487</li>
+																		<li title="异步图书">品牌：
+																			<a href="//www.jd.com/pinpai/1-1713-266205.html" clstag="shangpin|keycount|product|pinpai_1713">异步图书</a>
+																		</li>
+																		<li title="平装">包装：平装</li>
+																		<li title="16开">开本：16开</li>
+																		<li title="2016-04-01">出版时间：2016-04-01</li>
+																		<li title="胶版纸">用纸：胶版纸</li>
+																		<li title="730">页数：730</li>
+																		<li title="中文">正文语种：中文</li>-->
+																	</ul>
+																</div>
+																<div id="quality-life" class="quality-life" style="display:none" clstag="shangpin|keycount|product|pinzhishenghuo">
+																	<div class="q-logo">
+																		<img src="//img11.360buyimg.com/devfe/jfs/t19249/266/555939662/10324/447efd03/5a965eb2Nf83fd68c.jpg" alt="品质生活">
+																	</div>
+
+																</div>
+																<div id="suyuan-video"></div>
+																<div id="J-detail-banner" class="hide" style="display: block;">
+																	<a id="p-cat-insert" target="_blank" title="" href="http://ccc-x.jd.com/dsp/cpd?ext=aHR0cHM6Ly9wcm8uamQuY29tL21hbGwvYWN0aXZlLzQ2VnN1czdTcEtSZ0RieUFVaXRGSGVCSm50aHUvaW5kZXguaHRtbA&amp;log=JF5rMUAKXlLMuE_-1qw2RKwu9W82n03RnztIpYfC-NUJnP7A5v6VUsfpDag9vEA6PVUpXQ5x1g5m44E-5k4TDHMM40MZTygNUO3UWZAEWw1H53hJ_WrsDrj85GDzX39n-0_dbuxvt7JrFxdjovCwgPWbuBHJljO2pDBqrS7MguBSG4d3p4mYHy17Oi1_eYI_1OImPNiAD2yyQJhjyZDBbCsdh9uDHkNUJSveX72SDauwGue5BY079R2n3BUrZ1e8affMnzxn_xaAIyeGrhbdv_sWJrJfn4tx-guEn1hHHj1-335W7K6TcLg2DhlTgTF9MPhBtksxcxAc_wt51ro0jIwvhSxhrLztWKMCm62iN8oGMKwfIRRVWTrk7b18-nCLDkIFR56MMzXubzrjk_fcJqW_l9TklUfHWAkeO0iVK6lUnia4CKvemxM_zaU5Ey4zB7TdU4pQLX5I6yZaN24q927uJe4J7c_A73QQJDJ8R-p2fu9QX6BnjmUiE7z1yx3eqIhZVase0cImCMEyUyuz2pstlxTw2mkMb3LHHQuPDe9nYEFFukXxdvjZbUJ7DfeCZ4aeuga0l2VCV1UsqH5HylNd_yJaxDg3bHdcsTL7zHrTaL-vTX-KKCRDUGJflVAYfBzewP8CY31JpZviaCfD8fzEbMNQ_lycTOsE6fDOirC1pTN0cLrRM6Wp4OVNceHXB3Kq5apoB_q5m7EK1h6TEg"><img width="990" alt="" src="//img10.360buyimg.com/da/jfs/t1/62268/32/828/42478/5cf0e9caE78b61236/12dfb65cb6109645.jpg"></a>
+																</div>
+																<div id="J-book-ad"></div>
+																<div id="book-timeline" class="book-timeline book-timelineV2 hide"></div>
+																<div class="detail-content clearfix z-have-detail-nav" data-lazyload-fn="done" style="">
+																	<div class="detail-content-wrap">
+
+																		<div class="detail-content-item">
+																			<div id="activity_header" clstag="shangpin|keycount|product|activityheader"></div>
+																			<div id="J-detail-content">
+																				<div id="detail-tag-id-1" name="detail-tag-id-1" text="产品特色" class="book-detail-item" clstag="shangpin|keycount|product|chanpintesequ_3">
+																					<div class="item-mt">
+																						<h3>产品特色</h3>
+																					</div>
+																					<div class="item-mc">
+																						<div class="book-detail-content">
+																							<!--<p><img title="详情页——C primer plus 790-改0804.jpg" class="" src="//img30.360buyimg.com/vc/jfs/t5842/214/9474916904/1113686/cd5643fd/5987c384N3ce61016.jpg"></p>-->
+																						</div>
+																					</div>
+																				</div>
+																				<div id="detail-tag-id-2" name="detail-tag-id-2" text="编辑推荐" class="book-detail-item" clstag="shangpin|keycount|product|bianjituijianqu_3">
+
+																					<div class="more">
+																						<a data-open="0" href="#detail-tag-id-6" clstag="shangpin|keycount|product|muluquanbu_3">查看全部↓</a>
+																					</div>
+																				</div>
+																				<br>
+																			</div>
+																			<!-- #J-detail-content -->
+																			<div id="activity_footer" clstag="shangpin|keycount|product|activityfooter"></div>
+																		</div>
+																	</div>
+
+																	<div id="J-hot-reco" skus="" class="m-box book-rec-box" clstag="shangpin|keycount|product|53" <div class="m-box-bd">
+																		<div class="m-switch book-rec-switch">
+																			<div class="m-switch-main">
+
+																			</div>
+																			<div class="m-switch-page"> <span class="m-switch-prev m-switch-prev-disable" style="display: none;">上一页</span>
+																				<span class="m-switch-next m-switch-next-disable" style="display: none;">下一页</span> </div>
+																		</div>
+																	</div>
+																</div>
+																<div class="clb"></div>
+															</div>
+															<div data-tab="item" class="hide" style="display: none;">
+																<!--质检报告-->
+															</div>
+															<div data-tab="item" class="hide" style="display: none;">
+																<!--售后保障 家用电器展示一个图文的字段 -->
+															</div>
+															<div data-tab="item" class="hide" style="display: none;">
+																<!--商品评价-->
+															</div>
+														</div>
+
+													</div>
+													<div class="yyui_tab_content">
+														<div class="comment-item" data-guid="05d8865d-68c6-4562-83d7-b631645c80e5" data-top="">
+															<div class="user-column">
+																<div class="user-info"> <img src="//storage.360buyimg.com/i.imageUpload/72656e67616e7a686f7531333738373234333130353438_sma.jpg" width="25" height="25" alt="r***u" class="avatar"> r***u </div>
+																<div class="user-level">
+																	<a class="comment-plus-icon" href="//plus.jd.com/index" target="_blank">PLUS会员</a>
+																</div>
+															</div>
+															<div class="comment-column J-comment-column">
+																<div class="star"></div>
+																<p class="comment-con">很意外成为第一个评论的人。<br>京东物流很快，是一大信封包裹着寄来的（比dangdang的好多了，很薄的一个带dangdang标志白色不透明塑料袋寄来的，略显不放心和寒酸）。快递员也很负责，态度也很好！<br>书的纸质很好，正文大概630页，答案和附录共100页左右。<br>《C Primer Plus（第6版）中文版》详细讲解了C语言的基本概念和编程技巧。<br>《C Primer Plus（第6版）中文版》共17章。第1、2章介绍了C语言编程的预备知识。第3~15章详细讲解了C语言的相关知识，包括数据类型、格式化输入/输出、运算符、表达式、语句、循环、字符输入和输出、函数、数组和指针、字符和字符串函数、内存管理、文件输入输出、结构、位操作等。第16章、17章介绍C预处理器、C库和高级数据表示。本书以完整的程序为例，讲解C语言的知识要点和注意事项。每章末设计了大量复习题和编程练习，帮助读者巩固所学知识和提高实际编程能力。附录给出了各章复习题的参考答案和丰富的参考资料。
+																	<br>《C Primer Plus（第6版）中文版》可作为C语言的教材，适用于需要系统学习C语言的初学者，也适用于巩固C语言知识或希望进一步提高编程技术的程序员。</p>
+																<div class="pic-list J-pic-list">
+																	<a class="J-thumb-img" href="#none" data-ind="0"><img src="//img30.360buyimg.com/n0/s48x48_jfs/t2731/270/1424708363/42357/136bf84f/573da8dfN15f0697b.jpg" width="48" height="48" alt="r***u的晒单图片"></a>
+																	<a class="J-thumb-img" href="#none" data-ind="1"><img src="//img30.360buyimg.com/n0/s48x48_jfs/t7402/245/1549660172/144162/e4d53a1d/599dfabaN251c8778.jpg" width="48" height="48" alt="r***u的晒单图片"></a>
+																	<a class="J-thumb-img" href="#none" data-ind="2"><img src="//img30.360buyimg.com/n0/s48x48_jfs/t2590/264/1385206485/60970/33776991/573da8e1N16e36038.jpg" width="48" height="48" alt="r***u的晒单图片"></a>
+																	<a class="J-thumb-img" href="#none" data-ind="3"><img src="//img30.360buyimg.com/n0/s48x48_jfs/t2743/195/1409392921/64441/91adcbbb/573da8e2N70ad5bf2.jpg" width="48" height="48" alt="r***u的晒单图片"></a>
+																	<a class="J-thumb-img" href="#none" data-ind="4"><img src="//img30.360buyimg.com/n0/s48x48_jfs/t2713/230/1404905661/53799/634bd30d/573da8e2N5ae520d5.jpg" width="48" height="48" alt="r***u的晒单图片"></a>
+																</div>
+																<div class="J-pic-view-wrap clearfix" data-rotation="0"> </div>
+																<div class="tag-list"> <span data-tid="1507710">正版</span> <span data-tid="1507711">理论基础</span> <span data-tid="1507712">性价比高</span> </div>
+																<div class="comment-message">
+																	<div class="order-info"> <span>2016-05-19 19:51</span> </div>
+																	<div class="comment-op">
+																		<a class="J-report" data-login="1" href="#none" data-guid="05d8865d-68c6-4562-83d7-b631645c80e5" clstag="shangpin|keycount|product|pingjiaubao">举报</a>
+																		<a class="J-nice" data-login="1" href="#none" data-guid="05d8865d-68c6-4562-83d7-b631645c80e5" title="4"><i class="sprite-praise"></i>4</a>
+																		<a href="//club.jd.com/repay/11917487_05d8865d-68c6-4562-83d7-b631645c80e5_1.html" target="_blank"><i class="sprite-comment"></i>1</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="rightsidebar span_3_of_1">
+							<h2>热门图书</h2>
+							<!--<ul>
+								<li><a href="#">图书1</a></li>
+								<li><a href="#">图书2</a></li>
+								<li><a href="#">图书3</a></li>
+								<li><a href="#">图书4</a></li>
+							</ul>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="wrap">
+				<div class="section group">
+					<div class="col_1_of_4 span_1_of_4">
+						<h4>关于网站</h4>
+						<ul>
+							<li>
+								<a href="#">关于我们</a>
+							</li>
+							<li>
+								<a href="#">联系我们</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col_1_of_4 span_1_of_4">
+						<h4>为什么购买?</h4>
+						<ul>
+							<li>
+								<a href="#">7天无理由退货</a>
+							</li>
+							<li>
+								<a href="#">15天退货保障</a>
+							</li>
+							<li>
+								<a href="#">30天换货保障</a>
+							</li>
+							<li>
+								<a href="#">次日达</a>
+							</li>
+							<li>
+								<a href="#">1小时派单快速响应</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col_1_of_4 span_1_of_4">
+						<h4>关注我们</h4>
+						<ul>
+							<li>
+								<a href="#">微信</a>
+							</li>
+							<li>
+								<a href="#">帮助</a>
+							</li>
+							<li><span>123-456789</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copy_right">
+				<p>Copyright &copy; 2014.Company name All rights reserved.
+					<a target="_blank" href="#">sunny</a>
+				</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+
+				//获取url中的参数
+				function getUrlParam(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+					var r = window.location.search.substr(1).match(reg); //匹配目标参数
+					if(r != null) return unescape(r[2]);
+					return null; //返回参数值
+				}
+				//接收URL中的参数booksId
+				var id = getUrlParam('booksId');
+				console.log('id:' + id);
+				$.ajax({
+					type: "get",
+					url: "https://raw.githubusercontent.com/XSLu08042/Web-H5/master/bookshoop_json.json",
+					dataType: "json",
+					success: function(data) {
+						var str = "<ul>";
+						$.each(data.books, function(i, item) {
+							str += "<li><a href='#'>" + item.name + "</a></li>";
+							/*商品信息*/
+							//根据id获取详情数据
+							if(id == item.id) {
+								var img = '<img src="' + item.img + '" alt=" " style="width: 260px;height: 320px;"/>';
+								var bimg = '<img src="' + item.bimg + '" alt=" " style="width: 460px;height: 520px;"/>';
+								var desc_name = '<h2>' + item.name + '</h2>';
+								var desc = '<li>单价: <span style="font-size: 30px;color: #AC0000;">￥' + item.danjia + '</span></li><br /><br />';
+								desc += '<li>原价: <span style="text-decoration: line-through;">￥' + item.yuanjia + '</span></li><br /><br />';
+								desc += '<li>库存: <input readonly="readonly" style="width:80px;font-size: 18px;" type="text" value="' + item.kucun + '" />件</li><br /><br />';
+								//商品描述
+								var parameter = '<li title="' + item.chubanshe + '" clstag="shangpin|keycount|product|chubanshe_3">出版社：' + item.chubanshe + '</li>';
+								parameter += '<li title="' + item.ISBN + '">ISBN：' + item.ISBN + '</li>';
+								parameter += '<li title="' + item.banci + '">版次：' + item.banci + '</li>';
+								parameter += '<li title="' + item.bianma + '">商品编码：' + item.bianma + '</li>';
+								parameter += '<li title="' + item.pinpai + '">品牌：' + item.pinpai + '</li>';
+								parameter += '<li title="' + item.time + '">出版时间：' + item.time + '</li>';
+								parameter += '<li title="' + item.fujian + '">附件：' + item.fujian + '</li>';
+								parameter += '<li title="' + item.fujiannum + '">附件数：' + item.fujiannum + '</li>';
+								var desc_img = '<p><img title="商品详情介绍——' + item.name + '.jpg" class="" src="' + item.desc_img + '"></p>';
+								console.log('index:' + i);
+							}
+							$(".span_3_of_2").prepend(desc_name);
+							$("#mediumContainer").prepend(img);
+							$("#img_u").prepend(bimg);
+							$(".desc_ul").prepend(desc);
+							$("#parameter2").append(parameter);
+							$(".book-detail-content").append(desc_img);
+						});
+						str += "</ul>";
+						$(".rightsidebar").append(str);
+					}
+				});
+				//qi-------------------------
+				$("#dd").click(function() {
+					if($("#dd").html().charAt(1) == '0' & $(".dropdown li").css("display") == "none") {
+						//alert("dd")
+						$(".dropdown li").css({
+							"display": "block"
+						});
+					} else {
+						//alert("kk")
+						$(".dropdown li").css({
+							"display": "none"
+						});
+					}
+				})
+
+			})
+		</script>
+</body>
+
+</html>

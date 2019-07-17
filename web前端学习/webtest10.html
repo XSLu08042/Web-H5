@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习8 DOM二</title>
+		<style>
+			body,div,ul,li{ margin: 0; padding: 0;}
+			body{background-color: #CCCCCC;}
+			center{display: none;}
+			.all{
+				width: 910px;
+				height: 700px;
+				background: #E6E4E3;
+				margin: auto;
+				
+			}
+			.nav{
+				padding-top: 100px;
+			}
+			ul{list-style-type: none;}
+			ul li{
+				width: 126px;
+				height: 50px;
+				line-height:50px;
+				text-align:center;
+				margin-left: 3px;
+				box-shadow: 0 2px 5px #989898;
+				float: left;
+				/*background-image: url(img/webtest10img/bg1.jpg);*/
+			}
+			.over{
+				background-image: url(img/webtest10img/bg2.jpg);
+				color: #FFFFFF;
+			}
+			.out{
+				background-image: url(img/webtest10img/bg1.jpg);
+				color: #000000;
+			}
+			
+			.ad_left{
+				width: 100px;
+				height: 250px;
+				background: url(img/webtest10img/ad1.jpg) no-repeat;
+				float: left;
+				position: absolute;
+				left: 0;
+				/*position: fixed;*/
+			}
+			.ad_right{
+				width: 100px;
+				height: 250px;
+				background: url(img/webtest10img/ad1.jpg) no-repeat;
+				float: right;
+				position: absolute;
+				right: 0;
+				/*position: fixed;*/
+			}
+			#btn1,#btn2{
+				width: 35px;
+				height: 15px;
+				margin-left: 65px;
+				margin-top: 235px;
+			}
+			.ad3_right{
+				width: 300px;
+				height: 250px;
+				background: url(img/webtest10img/ad2.jpg) no-repeat;
+				right: 0;
+                /*bottom: 0;*/
+				position: absolute;
+				position: fixed;
+			}
+			#btn3{
+				width: 35px;
+				height: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ad_left" id="ad1">			
+			<img id="btn1" src="img/webtest10img/close.png">
+		</div>
+		<div class="ad_right" id="ad2">
+			<img id="btn2" src="img/webtest10img/close.png">
+		</div>
+		<div class="ad3_right" id="ad3">
+			<img id="btn3" src="img/webtest10img/close.png">
+		</div>
+		<div class="all">
+		<div class="nav">
+			<ul id="lis">
+				<li class="out">首页</li>
+				<li class="out">产品中心</li>
+				<li class="out">客户服务</li>
+				<li class="out">关于我们</li>
+				<li class="out">新闻咨询</li>
+				<li class="out">人力资源</li>
+				<li class="out">联系我们</li>
+			</ul>
+		</div>	
+		</div>
+	</body>
+		<script>
+			window.onload=function(){
+				init();
+			}
+			/*作业*/
+			var btn1=document.getElementById("btn1");
+			var btn2=document.getElementById("btn2");
+			var btn3=document.getElementById("btn3");
+			
+			btn1.addEventListener('click',function(){
+				document.getElementById("ad1").style.display="none";
+				document.getElementById("ad2").style.display="none";
+			});
+			btn2.addEventListener('click',function(){
+				document.getElementById("ad1").style.display="none";
+				document.getElementById("ad2").style.display="none";
+			});
+			btn3.addEventListener('click',function(){
+				document.getElementById("ad3").style.display="none";
+			});
+			
+			//ad3弹出
+			//设置初始bottom值
+			var bottomPosition=-250;
+			function init(){
+				var ad3 = document.getElementById("ad3");
+				ad3.style.bottom=bottomPosition+"px";
+				bottomPosition+=2;   //bottom值增加2像素
+				if(bottomPosition<0){
+					//间隔一秒执行
+					setTimeout(init,1);
+				}
+			}
+						
+			var lis = document.getElementById("lis").getElementsByTagName("li");
+			for(var i=0;i < lis.length;i++){
+				lis[i].onmouseover=function(){
+					/*this.style.backgroundImage='url(img/webtest10img/bg2.jpg)';
+					this.style.color='#fff';*/
+					this.className='over';
+				} 
+				lis[i].onmouseout=function(){
+					/*this.style.backgroundImage='url(img/webtest10img/bg1.jpg)';
+					this.style.color='#000';*/
+					this.className='out';
+				}
+			}
+		</script>
+</html>

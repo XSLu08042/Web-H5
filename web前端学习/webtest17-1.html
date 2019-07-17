@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习8 DOM一</title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<style>
+			*{ margin: 0; padding: 0;}
+			ul,li{ list-style:none;}				
+			li:hover{color: red;}
+			p{font-weight: bolder;}
+			.first{
+				margin-left: 40px;
+				width: 145px;
+			}
+			.second{
+				margin-left: 40px;
+				margin-top: 100px;
+			}
+			center{display: none;}
+		</style>
+	</head>
+	<body>
+			<p><img src="img/webtest09img/fold.gif">树形菜单：</p>
+			<div class="first">
+			<ul>
+				<li id="zhucai1"><img src="img/webtest09img/fclose.gif">文学艺术</li>
+					<ul id="xiangcai1" style="display: none;">
+						<li><img src="img/webtest09img/doc.gif">先锋写作</li>
+						<li><img src="img/webtest09img/doc.gif">小说散文</li>
+						<li><img src="img/webtest09img/doc.gif">诗风词韵</li>
+					</ul>
+				<li id="zhucai2"><img src="img/webtest09img/fclose.gif">贴图专区</li>
+					<ul id="xiangcai2" style="display: none;">
+						<li><img src="img/webtest09img/doc.gif">真我风采</li>
+						<li><img src="img/webtest09img/doc.gif">视频贴图</li>
+						<li><img src="img/webtest09img/doc.gif">行行摄摄</li>
+						<li><img src="img/webtest09img/doc.gif">Flash贴图</li>
+					</ul>
+				<li><img src="img/webtest09img/fclose.gif">房产论坛</li>
+				<li><img src="img/webtest09img/fclose.gif">娱乐八卦</li>
+			</div>
+			
+			
+			<div class="second">
+				<span><img id="left_btn" src="img/webtest09img/left1.jpg"></span>
+				<span><img id="right_btn" src="img/webtest09img/right1.jpg"></span>
+				<div id="left_pic"><img src="img/webtest09img/end1.jpg"></div>
+				<div id="right_pic" style="display: none;"><img src="img/webtest09img/end2.jpg"></div>
+			</div>
+		
+		<script type="text/javascript">
+			$("#zhucai1").click(function(){
+				if($("#xiangcai1").css('display')=="none")
+					$("#xiangcai1").slideDown(400);
+				else
+					$("#xiangcai1").slideUp(400);
+			});
+			$("#zhucai2").click(function(){
+				if($("#xiangcai2").css('display')=="none")
+					$("#xiangcai2").slideDown(400);
+				else
+					$("#xiangcai2").slideUp(400);
+			});
+			$("#left_btn").click(function(){
+				$("#left_btn").attr('src','img/webtest09img/left1.jpg');
+				$("#right_btn").attr('src','img/webtest09img/right1.jpg');
+				$("#left_pic").slideDown(400);
+				$("#right_pic").slideUp(400);
+			});
+			$("#right_btn").click(function(){
+				$("#left_btn").attr('src','img/webtest09img/left2.jpg');
+				$("#right_btn").attr('src','img/webtest09img/right2.jpg');
+				$("#left_pic").slideUp(400);
+				$("#right_pic").slideDown(400);
+			});
+				
+		</script>
+	</body>
+</html>

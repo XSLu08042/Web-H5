@@ -1,0 +1,466 @@
+html,body,div,ul,li{ padding: 0; margin: 0;}
+ul li{list-style: none;}
+body{
+	/*background-color: #FF0000;*/
+	}
+/*top*/
+.top{
+	width: 1801px;
+	height: 150px;
+	margin: 0 auto; 
+}
+.top1_01{
+	width: 157px;
+	height: 48px;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	float: left;
+	line-height: 48px;
+	font-family: "times new roman";
+	font-size: 15px;
+	color: #333333;
+}
+.t_span1{ margin-left: 90px;}
+.top1_01 img,.top1_02 img{ margin-left: 10px;}
+.top1_02{
+	width: 1168px;
+	height: 48px;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	float: left;
+	line-height: 48px;
+	font-family: "times new roman";
+	font-size: 15px;
+	color: #333333;
+}
+.t_span2,.t_span5{ margin-left: 25px;}
+.t_span3{ margin-left: 775px;}
+.t_span4{ margin-left: 125px;}
+.t_span2,.t_span3,.t_span4,.t_span5,.t_span7{
+	font-family: "times new roman";
+	font-size: 15px;
+	color: #333333;
+}
+.top1_03,.top1_04,.top1_05,.top1_06{
+	width: 59px;
+	height: 48px;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	float: left;
+	line-height: 48px;
+	text-align: center;
+}
+.top1_07{
+	width: 234px;
+	height: 48px;
+	border-bottom: 1px solid #f2f2f2;
+	float: left;
+	line-height: 48px;
+}
+.t_span6{
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: "times new roman";
+	font-size: 15px;
+	color: #989898;
+}
+.t_span5 a,.t_span7 a{
+	color: #777777;
+	text-decoration: none;
+}
+.t_span5 a:hover,.t_span7 a:hover{
+	color: #333333;
+}
+/*导航栏*/
+.top2{
+	width: 1801px;
+	height: 101px;
+	line-height: 101px;
+	text-align: center;
+	font-family: "Merriweather UltraBold";
+	font-size: 16px;
+	font-weight: bolder;
+}
+.top2 img{vertical-align: middle;}
+.top2 ul{ margin-left: 590px;}
+.top2 ul li{
+	list-style-image: none;
+	list-style-type: none;
+	float: left;
+}
+.top2 ul li a{
+	color: #777777;
+	text-decoration: none;
+	padding-right: 50px;
+}
+.top2 ul li a:hover{
+	color: #333333;
+}
+.t_span8{ margin-left: 30px; margin-right: 5px;}
+.t_span9{
+	font-family: "times new roman";
+	font-size: 17px;
+	font-weight: bolder;
+	color: #d7a95b;
+}
+.t_span10,.t_span11{
+	margin-left: 50px;
+}
+/*concent*/
+.concent{
+	width: 1801px;
+	height: 4583px;
+	margin: 0 auto;  
+	clear:both; 
+}
+.cont1{
+	width: 1801px;
+	height: 855px;
+	background-color:#575757;
+	text-align:center;
+}
+.cont1_01{
+	width: 1801px;
+	height: 50px;
+	padding-top: 290px;
+}
+.cont1_text01{
+	width: 1801px;
+	height: 60px;
+	text-align: center;
+	margin-top: 15px;
+	font-family: "Merriweather UltraBold";
+	font-size: 60px;
+	font-weight: 900;
+	color: #ffffff;
+}
+.cont1_pic01{
+	width: 1801px;
+	height: 50px;
+	text-align: center;
+	margin-top: 15px;
+	line-height: 50px;
+}
+.cont1_text02{
+	width: 475px;
+	height: 40px;
+	text-align: center;
+	font-family: "Droid Serif";
+	font-weight: 170;
+	font-size: 16px;
+	color: #ebebeb;
+	margin: auto;
+	margin-top: 10px;
+}
+/*内容2*/
+.cont2{
+	width: 1801px;
+	height: 2900px;
+	font-family: "Merriweather Bold";
+	font-size: 48px;
+	font-weight: bolder;
+}
+.cont2_text01{
+	width: 1801px;
+	height: 50px;
+	text-align: center;
+	margin-top: 130px;
+	
+}
+.cont2_pic01{
+	text-align: center;
+}
+.cont2_text02{
+	width: 550px;
+	height: 100px;
+	text-align: center;
+	font-family: "iPhone 黑体";
+	font-weight: 170;
+	font-size: 16px;
+	color: #777777;
+	margin: auto;
+	margin-top: 17px;
+}
+.cont2_01,.cont2_02,.cont2_03,.cont2_04,.cont2_05,.cont2_06{
+	width: 205px;
+	height: 123px;
+	float: left;
+	text-align: center;
+	line-height: 123px;
+}
+/*图片垂直居中*/
+.cont2_01 img,.cont2_02 img,.cont2_03 img,.cont2_04 img,.cont2_05 img,.cont2_06 img{ vertical-align: middle;}
+.cont2_01{ margin-left: 285px;}
+.cont2_07{
+	clear: both;
+	font-family: "Merriweather Bold";
+	font-size: 18px;
+	font-weight: bolder;
+}
+.cont2_08{
+	clear: both;
+	font-family: "tahoma";
+	font-size: 16px;
+	font-weight: 170;
+	color: #777777;
+}
+.cont2_07 ul,.cont2_08 ul{margin-left: 285px;}
+.cont2_07 ul li,.cont2_08 ul li{
+	width: 205px;
+	height: 30px;
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 123px;
+	text-align: center;
+	float: left;
+}
+.cont2_text03{
+	clear: both;
+	padding-top: 150px;
+	text-align:center;
+}
+
+.cont2_11{
+	height: 250px;
+	width:270px;
+	background-color: #838383;
+	margin-left: 315px;
+	margin-top: 30px;
+	float: left;
+}
+.cont2_12{
+	height: 450px;
+	width: 370px;
+	background-color: #838383;
+	float: left;
+	margin-left: 30px;
+}
+.cont2_13{
+	height: 450px;
+	width: 465px;
+	float: left;
+	margin-left: 25px;
+}
+.text_01{margin-top: 80px;}
+.text_02{
+	font-family: "Merriweather Bold";
+	font-size: 32px;
+	font-weight: bolder;
+	color: #222222;
+	margin-top: 10px;
+}
+.text_03{
+	font-family: tahoma;
+	font-size: 14px;
+	font-weight: 170;
+	color: #777777;
+	margin-top: 18px;
+	text-align:justify;
+}
+.text_04{
+	height: 50px;
+	width: 130px;
+	float: left;
+	margin-top: 40px;
+	font-family: "Merriweather UltraBold";
+	font-size: 14px;
+	font-weight: bolder;
+	text-align: center;
+	line-height: 50px;
+	background: url(../img/webtest01img/center_boder.png)no-repeat;
+}
+
+.cont2_14{
+	height: 250px;
+	width:270px;
+	background-color: #838383;
+	margin-right: 315px;
+	margin-top: 100px;
+	float: right;
+
+}
+.cont2_15{
+	height: 450px;
+	width: 370px;
+	background-color: #838383;
+	float: right;
+	margin-right: 30px;
+	margin-top: 70px;
+}
+.cont2_16{
+	height: 450px;
+	width: 465px;
+	float: right;
+	margin-right: 25px;
+	margin-top: 70px;
+}
+.cont2_text04{
+	clear: both;	
+	text-align:center;
+	padding-top: 130px;
+}
+.cont2_17,.cont2_18{
+	width: 290px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+}
+/*图片垂直居中*/
+.cont2_17 img,.cont2_18 img{ vertical-align: middle;}
+.cont2_17{ margin-left: 320px;}
+.cont2_19{
+	clear: both;
+	font-family: "Merriweather Bold";
+	font-size: 18px;
+	font-weight: bolder;
+}
+.cont2_20{
+	clear: both;
+	font-family: "tahoma";
+	font-size: 14px;
+	font-weight: 170;
+	color: #777777;
+}
+.cont2_19 ul,.cont2_20 ul{margin-left: 320px;}
+.cont2_19 ul li,.cont2_20 ul li{
+	width: 290px;
+	height: 30px;
+	list-style-image: none;
+	list-style-type: none;
+	line-height: 30px;
+	text-align: center;
+	float: left;
+}
+.cont2_19 ul li{
+	margin-top: 30px;
+}
+/*内容3*/
+.cont3{
+	width: 1801px;
+	height: 697px;
+	background-color: #484848;
+	line-height: 697px;
+	text-align:center;
+}
+.cont3 img,.cont4 img{vertical-align: middle;}
+.cont4_01,.cont4_02,.cont4_03{
+	height: 217px;
+	width: 449px;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	border-top:1px solid #f2f2f2 ;
+	float: left;
+	line-height: 250px;
+}
+.cont4_04{
+	height: 217px;
+	width: 449px;
+	border-bottom: 1px solid #f2f2f2;
+	border-top:1px solid #f2f2f2 ;
+	float: left;
+	line-height: 250px;
+}
+.pic{	
+	margin-left: 80px;
+    float:left; 
+}
+
+.text{
+	margin-top: 25px;
+	margin-left: 40px;
+	float:left; 
+}
+/*foot*/
+.foot{
+	clear: both;
+	width: 1801px;
+	/*height: 619px;*/
+	margin: 0 auto; 
+	background-color: #282828; 
+}
+
+.foot_p1,.foot_p2,.foot_p3,.foot_p4{
+	width: 250px;
+	font-family: "Droid Serif";
+	font-size: 14px;
+	font-weight: 170;
+	color: #9e9e9e;
+	padding-top: 35px;
+	margin: auto;
+}
+.foot_p2,.foot_p4{ padding-top: 5px;}
+.foot_p3{ padding-top: 30px;}
+.foot_p5{
+	height: 12px;
+	font-family: "Merriweather UltraBold";
+	font-size: 15px;
+	font-weight: bolder;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 68px;
+}
+.foot_1,.foot_2,.foot_3,.foot_4{
+	width: 310px;
+	height: 385px;
+	/*border: 1px solid red;*/
+	float: left;
+	font-family: "Merriweather UltraBold";
+	font-size: 15px;
+	font-weight: bolder;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 70px;
+}
+.foot_1{
+	clear:both;
+	margin-left: 275px;
+	font-family: "微软雅黑";
+	font-size: 28px;
+	font-weight: bolder;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 67px;
+}
+.foot_2 ul{ margin-top: 27px;}
+.foot_2 ul li{
+	width: 160px;
+	height: 32px;
+	font-family: "Droid Serif";
+	font-size: 14px;
+	font-weight: 170;
+	color: #9e9e9e;
+	text-align: center;
+	margin: auto;
+}
+.foot_4 img{ margin-top: 20px; }
+.foot_5{
+	clear: both;
+	height: 30px;
+	width: 1801px;
+	padding-top: 70px;
+	line-height: 30px;
+}
+.foot_5 ul{ margin-left: 295px;}
+.foot_5 ul li{
+	float: left;
+	font-family: "Droid Serif";
+	font-size: 14px;
+	font-weight: 250;
+	color: #cecece;
+	margin-left: 22px;
+}
+.foot_5 ul .foot_li02{ margin-left: 175px;}
+.foot_5 ul .foot_li03{margin-left: 9px;}
+.banquan{
+	clear: both;
+	width: 1801px;
+	height: 140px;
+	text-align: center;
+	line-height: 140px;
+	font-family: "Droid Serif";
+	font-size: 14px;
+	font-weight: 250;
+	color: #ababab;
+}
+.banquan span{ color: red;}

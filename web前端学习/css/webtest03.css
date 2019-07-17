@@ -1,0 +1,96 @@
+html,body,div,ul,li{ padding: 0; margin: 0;}
+.top{
+	width: 100%;
+	height: 80px;	
+    box-shadow: 0 0 15px #afaeae;
+}
+.log{
+	width: 1360px;
+	height: 80px;
+	margin: 0 auto;
+	line-height: 80px;	
+}
+.log img{
+	vertical-align: middle;
+	margin-left: 15px;
+}
+.log span{
+	width: 40px;
+	height: 25px;
+	border-left: 2px solid #cccccc;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	font-weight: 700;
+	color: #666666;
+	margin-left: 15px;
+	padding-left: 15px;
+}
+.forml{
+	width: 400px;
+	height: 500px;
+	margin: auto;
+	margin-top: 50px;
+}
+.forml ul li{
+	padding-left: 20px;
+	list-style: none;
+	height: 40px;
+	width: 300px;
+	margin: auto;
+	line-height: 40px;
+	margin-top: 25px;
+	border: 1px solid #CCCCCC;
+	color: #666666;
+	font-size: 10px;	
+}
+input{
+	height: 35px;
+	width: 155px;
+	line-height: 35px;
+	margin-left: 15px;
+	border: 0px;
+	outline:none;
+}
+/*去除input边框在样式里加  border: 0px;
+去除当点击input框时显示的边框  outline:none;*/
+.yz span{float: left;}
+.yz input{width: 125px;float: left;}
+.yz span img{
+	width: 75px;
+	height: 39px;
+	margin-left: 26px;
+	vertical-align: middle;
+}
+.forml ul li.read{
+	width: 325px;
+	padding: 0px;
+	color: #333333;
+	font-size: 11px;
+	margin-top: 10px;
+	border: 0px;
+}
+.read input{
+	margin: 0px;
+	width: 15px;
+	height: 15px;
+	padding: 0px;
+	float: left;
+	margin-top: 10px;
+}
+.read a{
+	text-decoration:none;
+	color: #598bff;
+}
+.read span{ font-size: 11px;float: left;}
+.forml ul li.registbt{padding: 0px;width: 325px;border: 0px;}
+.forml ul li.registbt input{
+	height: 40px;
+	width: 325px;
+	line-height: 40px;
+	text-align: center;
+	margin: 0px;
+	background-color: #ee2222;
+	border: 0px;
+	outline:none;
+	color: white;
+}

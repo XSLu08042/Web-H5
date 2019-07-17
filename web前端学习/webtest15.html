@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>DOM操作-练习</title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<style type="text/css">
+			body { 
+				font-size: 13px;
+				line-height: 25px;
+			}
+			center{display: none;}
+			table {
+				border-top: 1px solid #333;
+				border-left: 1px solid #333;
+				width: 300px;
+			}
+			
+			td {
+				border-right: 1px solid #333;
+				border-bottom: 1px solid #333;
+			}
+			
+			.center {
+				text-align: center;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				//增加一行
+				$("#btn1").click(function(){		
+					$("#row2").after("<tr><td>幸福从天而降</td><td >&yen;18.50</td></tr>");
+					$("tr td:last-child").css({"text-align": "center"});
+				});
+				
+				//删除第二行
+				$("#btn2").click(function(){
+					if($("tr")[2]!=null){
+					$("tr")[2].parentNode.removeChild($("tr")[2]);//删除行
+					} 
+				});
+				
+				//标题行设置为字体加粗、文本居中显示，背景颜色为灰色
+				$("#btn3").click(function(){
+					$("#row1").css({"font-weight":"bold","text-align":"center","background-color":" #cccccc"});
+				});
+				
+				//复制最后一行
+				$("#btn4").click(function(){
+					//访问复制的行,复制指定的行及子节点,在指定节点的末尾添加行
+					$("#myTable").append($("#row3").clone(true)); 
+				});
+			});
+			
+		</script> 
+	</head>
+
+	<body>
+		<table border="0" cellspacing="0" cellpadding="0" id="myTable">
+			<tr id="row1">
+				<td>书名</td>
+				<td>价格</td>
+			</tr>
+			<tr id="row2">
+				<td>看得见风景的房间</td>
+				<td class="center">&yen;30.00</td>
+			</tr>
+			<tr id="row3">
+				<td>60个瞬间</td>
+				<td class="center">&yen;32.00</td>
+			</tr>
+		</table>
+		<input name="b1" id="btn1" type="button" value="增加一行" />
+		<input name="b2" id="btn2" type="button" value="删除第2行"  />
+		<input name="b3" id="btn3" type="button" value="修改标题样式"  />
+		<input name="b4" id="btn4" type="button" value="复制最后一行" />
+
+	</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+
+<head>
+	<title>Login</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" src="js/jquery-3.4.0.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="js/messages_zh.min.js" ></script>
+	<script type="text/javascript" src="js/additional-methods.min.js" ></script>
+	<script src="js/gVerify.js"></script> 
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<style>
+		center{
+				display: none;
+			}
+		label.error {
+			color: red;
+			margin-left: 10px;
+		}
+		
+		.yz {
+			margin-top: 10px;
+			display: flex;
+		}
+		
+		#code {
+			margin-left: 20px;
+			width: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="header_top">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+			</div>
+			<div class="cart">
+				<p>欢迎来到我们的线上商店! <span>Cart:</span>
+					<div id="dd" class="wrapper-dropdown-2"> 0 - ￥0.00
+						<ul class="dropdown">
+							<li>还没有一件商品被放入购物车</li>
+						</ul>
+					</div>
+				</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="header_bottom">
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="bookindex.html">首页</a>
+					</li>
+					<li>
+						<a href="about.html">关于我们</a>
+					</li>
+					<li>
+						<a href="contact.html">联系我们</a>
+					</li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			<div class="search_box">
+				<form>
+					<input type="text" value="输入书籍名称或作者搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '输入书籍名称或作者搜索';}"><input type="submit" value="">
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="main">
+			<div class="content">
+				<div class="section group">
+					<div class="col span_2_of_3">
+						<div class="contact-form">
+							<h2>登录</h2>
+
+							<form id="LoginForm" method="post" action="#"> 
+								<div>
+									<span><label>用户名</label></span>
+									<span><input name="userName" type="text" class="textbox" ></span>
+								</div>
+								<div>
+									<span><label>密码</label></span>
+									<span><input name="password" type="password" class="textbox"></span>
+								</div>
+								<div class="yz">
+									<span id="v_container" style="width: 100px;height: 30px;"></span>
+									<span><input type="text" name="code" id="code" value="" placeholder="请输入验证码" /></span>
+								</div>
+								<div>
+									<span><input type="submit" value="登录"  class="myButton"></span>
+								</div>
+
+							</form>
+						</div>
+					</div>
+					<div class="col span_1_of_3">
+						<div class="company_address">
+							<h3>公司信息 :</h3>
+							<p>重庆市巴南区重庆工程学院大学生创业园,</p>
+							<p>实习楼4-10,</p>
+							<p>400056</p>
+							<p>Phone:12345678</p>
+							<p>Fax: (023) 12345678</p>
+							<p>Email: <span>info@mycompany.com</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap">
+			<div class="section group">
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>关于网站</h4>
+					<ul>
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+						<li>
+							<a href="#">联系我们</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>为什么购买?</h4>
+					<ul>
+						<li>
+							<a href="#">7天无理由退货</a>
+						</li>
+						<li>
+							<a href="#">15天退货保障</a>
+						</li>
+						<li>
+							<a href="#">30天换货保障</a>
+						</li>
+						<li>
+							<a href="#">次日达</a>
+						</li>
+						<li>
+							<a href="#">1小时派单快速响应</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>关注我们</h4>
+					<ul>
+						<li>
+							<a href="#">微信</a>
+						</li>
+						<li>
+							<a href="#">帮助</a>
+						</li>
+						<li><span>123-456789</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copy_right">
+			<p>Copyright &copy; 2019.Company name All rights reserved.
+				<a target="_blank" href="#">sunny</a>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$().ready(function() {
+			var flag=false;
+			var verifyCode = new GVerify("v_container");
+			$("#code").blur(function() {
+				$("#v_container label").remove();
+				var res = verifyCode.validate($("#code").val())
+				if(res) {
+					flag=true;
+				} else {
+					flag=false;
+					$("#v_container").append('<label id="code-error" style="color: red;">验证码错误</label>');
+				}
+			});
+			// 在键盘按下并释放及提交后验证提交表单
+			$("#LoginForm").validate({
+				onkeyup:false,
+				focusInvalid: true,
+				errorPlacement: function(error, element) {
+					element.parents("div").children().eq(0).append(error);
+				}, 
+				rules: {
+					userName: {
+						required: true,
+						minlength: 2
+					},
+					password: {
+						required: true,
+						rangelength: [6, 20]
+					},
+					code:{
+						required: true
+					} 
+				},
+				messages: {
+					userName: {
+						required: "请输入用户名",
+						minlength: "用户名必需由两个字母组成"
+					},
+					password: {
+						required: "请输入密码",
+						rangelength: "密码长度在6~20位之间"
+					},
+					code:{
+						required: "请输入验证码"
+					}
+				},
+				submitHandler : function(){
+					if(flag==true){
+					 form.submit();
+					}
+				}
+
+			});
+			//qi-------------------------
+				$("#dd").click(function() {
+					if($("#dd").html().charAt(1) == '0' & $(".dropdown li").css("display") == "none") {
+						//alert("dd")
+						$(".dropdown li").css({
+							"display": "block"
+						});
+					} else {
+						//alert("kk")
+						$(".dropdown li").css({
+							"display": "none"
+						});
+					}
+				})
+
+		});
+	</script>
+</body>
+
+</html>

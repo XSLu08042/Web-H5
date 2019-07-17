@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			center{display: none;}
+			.mydate{
+				margin-top: 40px;
+				padding-left: 10px;
+				height: 146px;
+				width: 240px;
+				text-align: center;
+				line-height: 140px;
+				font-size: 46px;
+				font-family: "微软雅黑";
+				font-weight: bolder;
+				color: white;
+				background: url(img/webtest07img/clock.png)no-repeat;
+			}
+			.date2{
+				width: 138px;
+				height: 150px;
+				padding-top: 5px;
+				font-family: "微软雅黑";
+				color: white;
+				text-align: center;
+				background: url(img/webtest07img/cald.png) no-repeat;
+			}
+			.date3{
+				margin-top: -125px;
+				margin-left: 35px;
+				font-family: "微软雅黑";
+				font-size: 68px;
+				font-weight: bolder;
+			}
+		</style>
+	</head>
+	<body onload="showtime()">
+		<div id="date2" class="date2"></div>
+		<div id="date3" class="date3"></div>
+		<div id="date1" class="mydate"></div>
+		
+		<script type="text/javascript">
+			function showtime(){
+//				alert('ok');
+				//获取时间对象
+				var mydate = new Date();
+				//获取星期
+				var a = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+				var w = mydate.getDay();
+				//var str="星期"+a[w];
+				//获取日期
+				var d = mydate.getDate();
+					d = d<10?"0"+d:d;
+				//获得时
+				var h = mydate.getHours();
+					h=h<10?"0"+h:h;
+				//获得分
+				var m = mydate.getMinutes();
+					m = m<10?"0"+m:m;
+				//获得秒
+				var s = mydate.getSeconds();
+					s = s<10?"0"+s:s;
+				
+				//将week显示到Div(date2)中
+				document.getElementById('date2').innerHTML=a[w];
+				//将日期显示到Div(date3)中
+				document.getElementById('date3').innerHTML=d;
+				//将时分秒显示到Div(date1)中
+				document.getElementById('date1').innerHTML=h+":"+m+":"+s;
+				//console.log(mydate);
+				
+				setTimeout('showtime()','1000');
+			}
+			
+			
+		</script>
+	</body>
+</html>

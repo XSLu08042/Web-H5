@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<head>
+<title>Cart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="js/jquery-3.4.0.min.js"></script>
+<style type="text/css">
+	a{color:#000}
+	a:hover{color:#f00}
+	center{
+				display: none;
+			}
+</style>
+</head>
+<body>
+  <div class="wrap">
+		<div class="header_top">
+			<div class="logo">
+				<a href="bookindex.html"><img src="images/logo.png" alt="" /></a>
+			</div>
+			  <div class="cart">
+			  	   <p>欢迎来到我们的线上商店! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> <span class="ddnum">0</span> - ￥<span class="ddzongjia">0.00</span>
+			  	   	<ul class="dropdown">
+							<li>还没有一件商品被放入购物车</li>
+					</ul></div></p>
+			  </div>
+	 <div class="clear"></div>
+  </div>
+	<div class="header_bottom">
+	     	<div class="menu">
+	     		<ul>
+			    	<li><a href="index.html">首页</a></li>
+			    	<li><a href="about.html">关于我们</a></li>
+			    	<li><a href="contact.html">联系我们</a></li>
+			    	<div class="clear"></div>
+     			</ul>
+	     	</div>
+	     	<div class="search_box">
+	     		<form>
+	     			<input type="text" value="输入书籍名称或作者搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '输入书籍名称或作者搜索';}"><input type="submit" value="">
+	     		</form>
+	     	</div>
+	     	<div class="clear"></div>
+	     </div>	
+ <div class="main">
+    	<div class="content">
+    		
+            <table class="cartab">
+            	<thead>
+            	<tr>
+                	<th style="width: 15%;" class="tdl"><input id="checkall" type="checkbox" checked="checked"/>全选</th>
+                	<th style="width: 40%;">商品</th>
+                	<th style="width: 10%;">单价</th>
+                	<th style="width: 10%;">优惠</th>
+                	<th style="width: 15%;">数量</th>
+                	<th style="width: 10%;">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                	<td><input name="checkp" type="checkbox" checked="checked" value="1" /></td>
+                	<td>
+                    	<img src="images/upload/b2.png" alt=""/>
+                        java从入门到精通
+                    </td>
+                	<td class="tdc">￥<span id="p1">56.50</span></td>
+                	<td class="tdc">8折</td>
+                	<td class="tdc">
+                    	<span class="num">-</span>
+                    	<input id="n1" readonly="readonly" type="text" value="1"/>
+                    	<span class="num">+</span>
+                    </td>
+                	<td class="tdc"><a id="delItem" href="#">删除</a></td>
+                </tr>
+                <tr>
+                	<td><input name="checkp" type="checkbox" checked="checked" value="2" /></td>
+                	<td>
+                    	<img src="images/upload/b2.png" alt=""/>
+                        java从入门到精通
+                    </td>
+                	<td class="tdc">￥<span id="p2">57.50</span></td>
+                	<td class="tdc">7折</td>
+                	<td class="tdc">
+                    	<span class="num">-</span>
+                    	<input id="n2" readonly="readonly" type="text" value="1"/>
+                    	<span class="num">+</span>
+                    </td>
+                	<td class="tdc"><a id="delItem" href="#">删除</a></td>
+                </tr>
+                <tr>
+                	<td><input name="checkp" type="checkbox" checked="checked" value="3" /></td>
+                	<td>
+                    	<img src="images/upload/b2.png" alt=""/>
+                        java从入门到精通
+                    </td>
+                	<td class="tdc">￥<span id="p3">58.50</span></td>
+                	<td class="tdc">8折</td>
+                	<td class="tdc">
+                    	<span class="num">-</span>
+                    	<input id="n3" readonly="readonly" type="text" value="1"/>
+                    	<span class="num">+</span>
+                    </td>
+                	<td class="tdc"><a id="delItem" href="#">删除</a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                	<td colspan="4">
+                    	<a href="#" id="delSel">删除所选商品</a>
+                        <a href="index.html">返回继续购物</a>
+                    </td>
+                    <td colspan="2" class="tdr">
+                    	<span>￥</span><span id="total">8888.00</span>
+                        <a href="#">现在结算</a>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+            <div class="clear"></div>
+         </div> 
+    </div>
+ </div>
+   <div class="footer">
+   	  <div class="wrap">	
+	     <div class="section group">
+				<div class="col_1_of_4 span_1_of_4">
+						<h4>关于网站</h4>
+						<ul>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+						</ul>
+					</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>为什么购买?</h4>
+						<ul>
+						<li><a href="#">7天无理由退货</a></li>
+						<li><a href="#">15天退货保障</a></li>
+						<li><a href="#">30天换货保障</a></li>
+						<li><a href="#">次日达</a></li>
+						<li><a href="#">1小时派单快速响应</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>关注我们</h4>
+						<ul>
+							<li><a href="#">微信</a></li>
+                            <li><a href="#">帮助</a></li>
+							<li><span>123-456789</span></li>							
+						</ul>
+				</div>
+			</div>			
+        </div>
+        <div class="copy_right">
+				<p>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="#">sunny</a></p>
+		   </div>
+    </div>
+    <script>
+    	$(function(){
+    		var total=0;
+    		//全选
+	    	$("#checkall").change(function(){
+	    		if(this.checked==true){
+	    			$("[name='checkp']").prop('checked', true);
+	    		}else{
+	    			$("[name='checkp']").prop('checked', false);
+	    		}
+	    		getTotal();
+	    	})
+	    	//单选
+	    	$("[name='checkp']").change(function(){
+	    		//alert($("[name='checkp']").length)
+	    		if($("[name='checkp']").length==$("[name='checkp']:checked").length){
+	    			$("#checkall").prop('checked', true);
+	    		}else{
+	    			$("#checkall").prop('checked', false);
+	    		}
+	    		 getTotal(); 
+	    	})
+	    	//删除所选商品
+	    	$("#delSel").click(function(){
+	    		$("[name='checkp']:checked").each(function(){
+	    			index = $(this).parents("tr").index();  // 获取checkbox所在行的顺序
+            		$("table tbody tr").eq(index).remove();
+            		if($("[name='checkp']:checked").length==0){
+            			$("#checkall").prop('checked', false);
+            		}
+	    		})
+	    		getTotal();
+	    	})
+	    	//删除
+	    	$("table tbody").on("click","#delItem",function(){
+				var index=$(this).parents("tr").index();
+				$("table tbody tr").eq(index).remove();	
+				if($("[name='checkp']:checked").length==0){
+           			$("#checkall").prop('checked', false);
+           		}else if($("[name='checkp']").length==$("[name='checkp']:checked").length){
+		    		$("#checkall").prop('checked', true);
+		    	}else{
+		    		$("#checkall").prop('checked', false);
+		    	}
+		    	getTotal();
+			})
+	    	//减少商品
+	    	$(".tdc .num:nth-child(1)").click(function(){
+	    		var aa=$(this).parents().children().eq(1);//找到value框
+				if(aa.val()>1){
+	    			var num =aa.val();
+	    			num--;
+		    		aa.val(num);
+		    	}else{
+		    		alert("客官,该宝贝不能再少啦");
+		    	}
+		    	getTotal();
+	    	})
+	    	//增加商品
+	    	$(".tdc .num:nth-child(3)").click(function(){
+	    		//alert("hh")
+	    		var aa=$(this).parents().children().eq(1);//找到value框
+	    		var num =aa.val();
+	    			num++;
+		    		aa.val(num);
+					getTotal();
+	    	}) 
+	    	getTotal();
+	    	//计算总价
+	    	
+	    	function getTotal(){
+	    		total=0;
+	    		var sum=0;
+	    		$("[name='checkp']:checked").each(function(){
+	    			var index=$(this).parents("tr").index()+1;
+	    			var num =parseInt($(this).parents("tr").children().eq(4).children().eq(1).val());
+	    			var peice=$(this).parents("body tbody tr").children().eq(3).text();//8折
+					var price = parseFloat(peice.match(/\d+/)*0.1).toFixed(2);//提取“8折”的数字8乘0.1
+					var much=parseFloat($(this).parents("tr").children().eq(2).children().eq(0).text()).toFixed(2);
+					var xiaoji=num*price*much;
+					
+					total+=xiaoji; 
+					sum +=num;//总数量
+					//console.log(price+"  "+num+" "+much+" "+total+" "+xiaoji)
+	    		}) 
+	    		$("#total").text(parseFloat(total).toFixed(2));
+	    		$(".ddnum").text(sum);
+	    		$(".ddzongjia").text(parseFloat(total).toFixed(2));
+	    	}
+	    	//qi-------------------------
+				$("#dd").click(function() {
+					if($(".ddnum").text() == '0' & $(".dropdown li").css("display") == "none") {
+						//alert("dd")
+						$(".dropdown li").css({
+							"display": "block"
+						});
+					} else {
+						//alert("kk")
+						$(".dropdown li").css({
+							"display": "none"
+						});
+					}
+				})
+    	})
+    </script>
+</body>
+</html>
+

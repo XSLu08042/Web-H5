@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习9 使用DOM操控表单--京东</title>
+		<link rel="stylesheet" href="css/webtest11-1.css" />
+		<style>
+			center{display: none;}
+			select{
+				border:none;
+				outline: none;
+				margin-left: -10px;
+				margin-right: -12px;
+				font-family: "微软雅黑";
+				font-size: 10px;
+				color: #666666;
+			}
+			.msg{
+				float: right;
+				width: 320px;
+				height: 40px;
+				margin-right: -330px;
+				padding-left: 5px;
+				/*background-color: #D7A95B;*/
+				}
+			.msg img{
+				width: 25px;
+				height: 25px;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			#msg_yz{
+				margin-top: -40px;
+			}
+			.forml table tr td{
+				margin-top: 20px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!--top begin-->
+		<div class="top">
+			<div class="log">
+			<img src="img/webtest03img/log.png" /><span>欢迎注册</span>
+			</div>
+		</div>
+		<!--top end-->
+		<!--content begin-->
+		<div class="forml">
+			<form name="register" id="form_reg" method="post" action="http://www.sina.com.cn" >
+				<table cellpadding="0" cellspacing="20px" >
+					<tr>
+						<td id="td_user" style="padding-left: 20px;">用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名
+							<input id="user" type="text" name="username" placeholder="您的用户名和登录名"/>
+							<span id='msg_uname' class="msg"></span>
+						</td>					
+					</tr>
+					<tr>
+						<td  id="td_psw" style="padding-left: 20px;">设&nbsp;置&nbsp;密&nbsp;码
+							<input id="psw" type="password" name="password" placeholder="建议至少使用两种字符组合"/>
+							<span><img src="img/webtest03img/jianpan.png"></span>
+							<span id='msg_psw' class="msg"></span>
+						</td>
+					</tr>
+					<tr>
+						<td id="td_rpsw" style="padding-left: 20px;">确&nbsp;认&nbsp;密&nbsp;码
+							<input id="rpsw" type="password" name="repassword" placeholder="请再次输入密码"/>
+							<span><img src="img/webtest03img/jianpan.png"></span>
+							<span id='msg_rpsw' class="msg"></span>
+						</td>
+					</tr>
+					<tr>
+						<td id="td_phone" style="padding-left: 20px;">
+							<select id="phone_which">
+						  		<option value ="volvo">中国10086</option>
+						  		<option value ="saab">电信10000</option>
+						  		<option value="opel">联通10010</option>
+							</select>						
+							<input  id="phone" type="tel" name="phone" placeholder="建议使用常用手机"/>
+							<span id='msg_phone' class="msg"></span>
+						</td>
+					</tr>
+					<tr>
+						<td id="td_yz" style="padding-left: 20px;">验&nbsp;&nbsp;&nbsp;证&nbsp;&nbsp;&nbsp;码
+							<input id="yanzheng" type="text" name="yz" placeholder="请输入验证码"/>
+							<span class="yz01"><img src="img/webtest03img/yanzheng.png"></span>
+							<span id='msg_yz' class="msg"></span>
+						</td>
+					</tr>
+					<tr class="read">
+						<td style="padding-left: 20px;"><input id="chk" type="checkbox" name="agreen" ><span>&nbsp;&nbsp;阅读并同意</span>
+							<span><a href="">《京东用户注册协议》</a></span><span><a href="">《隐私政策》</a></span>
+						</td>
+					
+					</tr>
+					<tr class="registbt">
+						<td><input id="btn_log" type="button" value="立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<!--content end-->
+		<script type="text/javascript">
+			var regbtn=document.getElementById("btn_log");
+			var form_reg = document.getElementById("form_reg");
+			var flag = true;
+			document.getElementById("user").focus();
+			//验证用户名
+			var uname=document.getElementById("user");
+			uname.addEventListener('blur',function(){
+				if(this.value.length==0){
+					document.getElementById("td_user").style.border = 'red 1px solid';
+					document.getElementById('msg_uname').innerHTML="<img src='img/webtest11-1img/no.png'  />用户名不能为空！";			
+					flag = false;
+				}
+				else{
+					var reg1=/^\w+$/;
+					/*console.log(this.value) 
+					alert(reg1.test(this.value))*/
+					if(reg1.test(this.value)==true){
+						document.getElementById("td_user").style.border = '#CCCCCC 1px solid';
+						document.getElementById('msg_uname').innerHTML="<img src='img/webtest11-1img/yes.png'  />";	
+						flag = true;
+						document.getElementById("psw").focus();
+						
+					}
+					else{
+						document.getElementById("td_user").style.border = 'red 1px solid';
+						document.getElementById('msg_uname').innerHTML="<img src='img/webtest11-1img/no.png'  />用户名只能是数字、字母、下划线！";
+						flag = false;
+					}
+				}
+			});
+			
+			document.getElementById("psw").addEventListener('focus',function(){
+				flag = false;
+							
+			});
+			//验证输入密码
+			var psw=document.getElementById("psw");
+			psw.addEventListener('blur',function(){
+				if(this.value.length==0){
+					document.getElementById("td_psw").style.border = 'red 1px solid';
+					document.getElementById('msg_psw').innerHTML="<img src='img/webtest11-1img/no.png'  />密码不能为空！";			
+					flag = false;
+				}
+				else{
+					var reg1=/^[a-zA-Z]\w{5,17}$/;
+					if(reg1.test(this.value)==true){
+						document.getElementById("td_psw").style.border = '#CCCCCC 1px solid';
+						document.getElementById('msg_psw').innerHTML="<img src='img/webtest11-1img/yes.png'  />";	
+						flag = true;
+						document.getElementById("rpsw").focus();
+						
+					}
+					else{
+						document.getElementById("td_psw").style.border = 'red 1px solid';
+						document.getElementById('msg_psw').innerHTML="<img src='img/webtest11-1img/no.png'  />以字母开头，6-18位，只能包含字符、数字和下划线!";
+						flag = false;
+					}
+				}
+			});
+			
+			document.getElementById("rpsw").addEventListener('focus',function(){
+				flag = false;
+			});
+			//验证确认密码
+			var rpsw=document.getElementById("rpsw");
+			rpsw.addEventListener('blur',function(){
+				if(this.value.length==0){
+					document.getElementById("td_rpsw").style.border = 'red 1px solid';
+					document.getElementById('msg_rpsw').innerHTML="<img src='img/webtest11-1img/no.png'  />确认密码不能为空！";			
+					flag = false;
+				}
+				else{					
+					if(this.value==document.getElementById("psw").value){
+						document.getElementById("td_rpsw").style.border = '#CCCCCC 1px solid';
+						document.getElementById('msg_rpsw').innerHTML="<img src='img/webtest11-1img/yes.png'  />";	
+						flag = true;
+						document.getElementById("phone").focus();
+						
+					}
+					else{
+						console.log(document.getElementById("psw").value)
+						document.getElementById("td_rpsw").style.border = 'red 1px solid';
+						document.getElementById('msg_rpsw').innerHTML="<img src='img/webtest11-1img/no.png'  />密码不一致!";
+						flag = false;
+					}
+				}
+			});
+			
+			document.getElementById("phone").addEventListener('focus',function(){
+				flag = false;
+			});
+			//验证手机号
+			var phone=document.getElementById("phone");
+			phone.addEventListener('blur',function(){
+				if(this.value.length==0){
+					document.getElementById("td_phone").style.border = 'red 1px solid';
+					document.getElementById('msg_phone').innerHTML="<img src='img/webtest11-1img/no.png'  />电话号码不能为空！";			
+					flag = false;
+				}
+				else{
+					var reg1=/^[1][3,4,5,7,8][0-9]{9}$/;
+					if(reg1.test(this.value)==true){
+						document.getElementById("td_phone").style.border = '#CCCCCC 1px solid';
+						document.getElementById('msg_phone').innerHTML="<img src='img/webtest11-1img/yes.png'  />";	
+						flag = true;
+						document.getElementById("yanzheng").focus();
+						
+					}
+					else{
+						document.getElementById("td_phone").style.border = 'red 1px solid';
+						document.getElementById('msg_phone').innerHTML="<img src='img/webtest11-1img/no.png'  />电话号码不正确!";
+						flag = false;
+					}
+				}
+			});
+			//验证验证码
+			var yz=document.getElementById("yanzheng");
+			var yz_txt="vJSL".toLowerCase();
+			yz.addEventListener('focus',function(){
+				flag = false;
+			})
+			yz.addEventListener('blur',function(){
+				if(this.value.length==0){
+					document.getElementById("td_yz").style.border = 'red 1px solid';
+					document.getElementById('msg_yz').innerHTML="<img src='img/webtest11-1img/no.png'  />验证码不能为空！";			
+					flag = false;
+				}
+				else{
+					if(this.value.toLowerCase()==yz_txt){
+						document.getElementById("td_yz").style.border = '#CCCCCC 1px solid';
+						document.getElementById('msg_yz').innerHTML="<img src='img/webtest11-1img/yes.png'  />";	
+						flag = true;
+					}
+					else{
+						document.getElementById("td_yz").style.border = 'red 1px solid';
+						document.getElementById('msg_yz').innerHTML="<img src='img/webtest11-1img/no.png'  />验证码错误!";
+						flag = false;
+					}
+				}
+			});
+			
+			
+			//验证阅读同意
+			var chk=document.getElementById("chk");
+			var isAngree=false;
+			chk.addEventListener('click',function(){
+				if(chk.checked==true){
+					isAngree = true;
+				}else{
+					isAngree = false;
+				}
+			});
+			//注册
+			regbtn.addEventListener('click',function(){
+				
+				if(flag==true&&isAngree==true){
+					form_reg.submit();
+				}
+				if(flag==true&&isAngree==false){
+					alert("请阅读并同意协议");
+				}
+				if(flag==false&&isAngree==true){
+					alert("请完善注册信息");
+				}
+			});
+		</script>
+	</body>
+</html>

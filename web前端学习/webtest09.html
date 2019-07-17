@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习8 DOM一</title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			ul,li{ list-style:none;}				
+			li:hover{color: red;}
+			p{font-weight: bolder;}
+			.first{
+				margin-left: 40px;
+				width: 145px;
+			}
+			.second{
+				margin-left: 40px;
+				margin-top: 100px;
+			}
+			center{display: none;}
+		</style>
+	</head>
+	<body>
+			<p><img src="img/webtest09img/fold.gif">树形菜单：</p>
+			<div class="first">
+			<ul>
+				<li id="zhucai1"><img src="img/webtest09img/fclose.gif">文学艺术</li>
+					<ul id="xiangcai1" style="display: none;">
+						<li><img src="img/webtest09img/doc.gif">先锋写作</li>
+						<li><img src="img/webtest09img/doc.gif">小说散文</li>
+						<li><img src="img/webtest09img/doc.gif">诗风词韵</li>
+					</ul>
+				<li id="zhucai2"><img src="img/webtest09img/fclose.gif">贴图专区</li>
+					<ul id="xiangcai2" style="display: none;">
+						<li><img src="img/webtest09img/doc.gif">真我风采</li>
+						<li><img src="img/webtest09img/doc.gif">视频贴图</li>
+						<li><img src="img/webtest09img/doc.gif">行行摄摄</li>
+						<li><img src="img/webtest09img/doc.gif">Flash贴图</li>
+					</ul>
+				<li><img src="img/webtest09img/fclose.gif">房产论坛</li>
+				<li><img src="img/webtest09img/fclose.gif">娱乐八卦</li>
+			</div>
+			
+			
+			<div class="second">
+				<span><img id="left_btn" src="img/webtest09img/left1.jpg"></span>
+				<span><img id="right_btn" src="img/webtest09img/right1.jpg"></span>
+				<div id="left_pic"><img src="img/webtest09img/end1.jpg"></div>
+				<div id="right_pic" style="display: none;"><img src="img/webtest09img/end2.jpg"></div>
+			</div>
+		
+		<script type="text/javascript">
+			/*作业一*/
+			var tab_zhu1 = document.getElementById("zhucai1");
+			var tab_zhu2 = document.getElementById("zhucai2");
+			var xiang1 = document.getElementById("xiangcai1");
+			var xiang2 = document.getElementById("xiangcai2");
+			/*作业二*/
+			var left_btn = document.getElementById("left_btn");
+			var right_btn = document.getElementById("right_btn"); 
+			var left_pic = document.getElementById("left_pic");
+			var right_pic = document.getElementById("right_pic");
+			
+				tab_zhu1.addEventListener(
+					'click',
+					function(){
+						if(xiang1.style.display=="none")
+							xiang1.style.display="";
+						else
+							xiang1.style.display="none";
+				});
+				
+				tab_zhu2.addEventListener(
+					'click',
+					function(){
+						if(xiang2.style.display=="none")
+							xiang2.style.display="";
+						else
+							xiang2.style.display="none";
+				});
+				
+				left_btn.addEventListener(
+					'click',
+					function(){
+						left_btn.src = "img/webtest09img/left1.jpg";
+						right_btn.src = "img/webtest09img/right1.jpg";
+						left_pic.style.display = "";
+						right_pic.style.display = "none";	
+				});
+				
+				right_btn.addEventListener(
+					'click',
+					function(){
+						left_btn.src = "img/webtest09img/left2.jpg";
+						right_btn.src = "img/webtest09img/right2.jpg";
+						left_pic.style.display = "none";
+						right_pic.style.display = "";
+				});
+				
+				
+		</script>
+	</body>
+</html>
