@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>放大镜与省级联动</title>
+		<link rel="stylesheet" href="css/jqzoom.css" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery.jqzoom.min.js"></script>
+		<script src="js/hc_zoom.js"></script>
+		<script src="js/distpicker.data.min.js"></script>
+		<script src="js/distpicker.min.js"></script>
+		<style>
+			body{margin: 0 auto; padding: 0 auto;}
+			#zoom2{
+				height: 250px;
+				width: 400px;
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				$("#zoom1").jqueryzoom();
+				$("#zoom2").hc_zoom();
+				$("#mean").distpicker({
+					province:"重庆市",
+					city:"重庆市市直辖区",
+					district:"万州区"
+				});
+			})
+			
+		</script>
+	</head>
+	<body>
+		<div id="zoom1">
+			<img src="img/fangdaimg/timg_small.png" jqimg="img/fangdaimg/timg_big.jpg"/>
+		</div>
+		<div id="zoom2">
+			<img src="img/fangdaimg/small.jpg"/>
+			<img src="img/fangdaimg/big.jpg" style="display: none;" />
+		</div>
+		<div id="mean">
+			<select></select>
+			<select></select>
+			<select></select>
+		</div>
+	</body>
+</html>
