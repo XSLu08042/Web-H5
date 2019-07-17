@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid red;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="600" height="400"></canvas><br/>
+<script>
+    var myCanvas = document.getElementById("myCanvas");
+    var ctx = myCanvas.getContext("2d");
+
+    var colors = ['#FF0000','#FF7D00','#FFFF00','#00FF00','#0000FF','#00FFFF','#FF00FF'];
+
+    ctx.translate(200, 200);
+
+    // 绘制图形
+    setInterval(animates, 10);
+
+    function animates() {
+        // 擦除画布
+        ctx.clearRect(-200,-200, myCanvas.width, myCanvas.height);
+        // 重绘
+        drawWindmill();
+        // 角度旋转
+        ctx.rotate(-1*Math.PI/180);
+    }
+    function drawWindmill() {
+        for(var i=0;i<6;i++){
+            ctx.beginPath();
+            ctx.arc(80,0,80, 0, 180*Math.PI/180, true);
+            ctx.closePath();
+            ctx.fillStyle = colors[i];
+            ctx.fill();
+
+            ctx.rotate(60*Math.PI/180);
+        }
+
+        ctx.beginPath();
+        ctx.arc(0,0,40, 0, 360*Math.PI/180);
+        ctx.closePath();
+        ctx.fillStyle ="white";
+        ctx.fill();
+    }
+
+
+</script>
+</body>
+</html>

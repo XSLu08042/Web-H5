@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>lrc歌词</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding:20px;
+            color: white;
+        }
+        h3{font-size: 24px;}
+        .container img{
+        	width: 250px;
+        	height: 250px;
+        	border-radius: 50%;
+        	margin-top: 15px;        	
+
+        }      
+		.music {
+			width: 400px;
+			height: 600px;			
+			border-radius: 10px;
+			margin: 20px auto;
+			position: relative;		
+            background-color: rgba(0, 0, 0, 0.35);
+			text-align: center;			
+		}
+		.container {		
+		   padding-top: 40px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 400px;
+			height: 600px;
+			text-align: center;
+			background: url(img/pic.png) no-repeat;	
+			background-size: cover;
+							
+		}
+        .lrc_content{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 400px;
+			height: 600px;
+			text-align: center;
+        }
+
+        #lrc_display {          
+            padding: 15px 30px;
+            height: 120px;
+            margin-top: 360px;
+            overflow: hidden;
+            
+        }
+        #lrc_display li {
+            padding: 1px 0;
+            overflow: hidden;
+        }
+        #lrc_display li p {
+            line-height: 24px;
+        }
+        #myAudio{       
+        	width: 300px;
+        	margin-top: 200px;
+        }
+        .rotate {
+		    -webkit-animation: rotating 10s linear infinite;
+		    -moz-animation: rotating 10s linear infinite;
+		    -o-animation: rotating 10s linear infinite;
+		    animation: rotating 10s linear infinite
+		 }
+		@-webkit-keyframes rotating {
+		     from { -webkit-transform: rotate(0) }
+		     to { -webkit-transform: rotate(360deg) }
+		}
+		@keyframes rotating {
+		     from { transform: rotate(0) }
+		     to { transform: rotate(360deg) }
+		}
+		@-moz-keyframes rotating {
+		     from { -moz-transform: rotate(0) }
+		     to { -moz-transform: rotate(360deg) }
+		}
+    </style>
+</head>
+<body>
+<div class="music">
+	<div class="container">
+		<h3 id="musicName">寻 (《花儿与少年3·冒险季》主题曲)</h3>
+		<img src="img/music_xun.jpg" id="musicImg" class="rotate">
+		<section class="lrc_content">
+		    <div id="lrc_display"></div>
+		</section>
+		<div id="audio_btn" >
+		    <audio id="myAudio" src="audios/华晨宇 - 寻.mp3" controls volume="0"></audio>
+		</div>
+	</div>
+</div>
+<script>
+var x = document.getElementById("myAudio"); 
+
+  $(function(){
+
+      $("#audio_btn").click(function(){
+
+          $("#musicImg").toggleClass("rotate"); //控制音乐图标 自转或暂停
+
+          
+
+          //控制背景音乐 播放或暂停            
+
+          if($("#musicImg").hasClass("rotate")){
+
+            x.play();
+
+        }else{
+
+            x.pause();
+
+         }
+     })
+
+ });
+    $(function () {
+        let lrcText = "[ti:寻 (《花儿与少年3·冒险季》主题曲)]\n"+
+			"[ar:华晨宇]\n"+			
+			"[al:《寻》]\n"+			
+			"[00:00.00]寻 (《花儿与少年3·冒险季》主题曲)]--华晨宇\n" +	
+			"[00:06.31]词：十禾\n"+			
+			"[00:07.19]曲：华晨宇\n"+		
+			"[00:08.19]编曲：郑楠\n"+			
+			"[00:09.16]制作人：郑楠\n"+			
+			"[00:18.12]枕边没有风浪怎么我们会跌荡摇晃\n"+			
+			"[00:26.30]伸手不见月光怎么繁星能闪耀光芒\n"+			
+			"[00:33.46]脚印会旧而梦还在走\n"+			
+			"[00:37.42]太阳尚远但一定会有\n"+			
+			"[00:42.51]等到天亮我们都寻找到最漂亮愿望\n"+			
+			"[00:49.77]好景多长 路上还有 暗香\n"+		
+			"[00:57.71]天色渐淡 迎面还有 风凉\n"+			
+			"[01:05.63]世界多广 转身还有 故乡\n"+			
+			"[01:13.68]找一个方向\n"+			
+			"[01:18.01]Let us fly\n"+			
+			"[01:25.84]Let us fly\n"+			
+			"[01:33.97]Let us fly\n"+			
+			"[01:34.76]沿途风景如歌变幻 再辗转\n"+		
+			"[01:38.43]人山人海的对白换一句等待\n"+			
+			"[01:42.20]看不懂黑白却听得到钟摆\n"+			
+			"[01:45.69]去新世界冒险和内心作伴\n"+			
+			"[02:06.65]风吹刹那不知你在向哪片日落张望\n"+			
+			"[02:14.51]很多话想说转过身只看见荒漠空旷\n"+			
+			"[02:21.45]一个人难免崇拜流浪\n"+			
+			"[02:25.43]却变成和自己的迷藏\n"+			
+			"[02:30.09]最好的旅途是让我们记住爱的模样\n"+			
+			"[02:37.71]好景多长 路上还有 暗香\n"+			
+			"[02:45.70]天色渐淡 迎面还有 风凉\n"+			
+			"[02:53.65]世界多广 转身还有 故乡\n"+			
+			"[03:01.66]只要你在旁\n"+			
+			"[03:06.02]Let us fly\n"+			
+			"[03:14.03]Let us fly\n"+			
+			"[03:21.60]Let us fly\n"+			
+			"[03:22.77]我看着你在花的梦中坐下\n"+			
+			"[03:26.62]你牵着我在山的宽阔中睡下\n"+			
+			"[03:30.55]毕竟我们只有一生这么长\n"+			
+			"[03:34.05]要用力给人间留下些印象\n"+			
+			"[03:38.15]Let us fly\n"+			
+			"[03:45.57]Let us fly\n"+			
+			"[03:54.07]Let us fly\n"+			
+			"[03:54.76]沿路旅途如歌变幻 在游览\n"+		
+			"[03:58.50]还给大地昨天的喜怒和烦忧\n"+			
+			"[04:02.62]下个春天回来我就会回家\n"+			
+			"[04:05.95]爱如少年把故事说完长大\n"+			
+			"[04:17.52]长大";
+
+        function resolveLrc() {
+            var lrcArr = lrcText.split("[");
+            var cxt = new Array();
+            var need = new Array();
+            for(var i=0 ; i<lrcArr.length ; i++) {
+                var arr = lrcArr[i].split("]");
+                var allTime = arr[0].split(".");
+                var time = allTime[0].split(":");
+                //获取分钟 秒钟 把时间换算成秒钟
+                var timer = time[0] * 60 + time[1] * 1;
+                var text = arr[1];
+                if (text && !isNaN(time[0])) {
+                    if(need.length>0){
+                        need.forEach(function (item, index) {
+                            var row = {
+                                id: item.id,
+                                text: text,
+                                time: item.time,
+                                isnum: item.isnum
+                            };
+                            cxt.push(row);
+                        });
+                        need = [];
+                    }
+                    var row = {
+                        id: i,
+                        text: text,
+                        time: timer,
+                        isnum: true
+                    };
+                    cxt.push(row);
+                } else {
+                    if((text==undefined || text==null || text=='')&&i>0){
+                        need.push({
+                            id: i,
+                            text: "",
+                            time: timer,
+                            isnum: true
+                        });
+                    }
+
+                    if(time[0]=="ti"){
+                        cxt.push({
+                            id: i,
+                            text: "歌曲名：" + time[1],
+                            time: -3,
+                            isnum: false
+                        });
+                    } else if(time[0]=="ar"){
+                        cxt.push({
+                            id: i,
+                            text: "演唱者：" + time[1],
+                            time: -2,
+                            isnum: false
+                        });
+                    } else if(time[0]=="al"){
+                        cxt.push({
+                            id: i,
+                            text: "专辑：" + time[1],
+                            time: -1,
+                            isnum: false
+                        });
+                    }
+                }
+            }
+            var html = "<ul>";
+            if(cxt.length>0){
+                cxt.sort(function (a, b) {
+                    return a.time-b.time; // 如果a>=b
+                });
+                cxt.forEach(function (item, index) {
+                    if(index<3)
+                        html += "<li><p id=" + item.id + " time="+item.time+" isnum='"+item.isnum+"' index='"+index+"' class='lrc_info'>" + item.text + "</p></li>";
+                    else
+                        html += "<li><p id=" + item.id + " time="+item.time+" isnum='"+item.isnum+"' index='"+index+"' class='normal'>" + item.text + "</p></li>";
+                })
+            }
+            html += "</ul>";
+            $("#lrc_display").html(html);
+            $("#lrc_display ul").css("margin-top", "50px");
+        }
+        resolveLrc();
+
+        var scrollHeight = 0;
+        var myAudio = document.getElementById("myAudio");
+        myAudio.addEventListener("timeupdate", function(){
+            //获取当前播放时间
+            var curTime = Math.floor(this.currentTime);
+            var ap = document.getElementsByTagName("p");
+            if($("p[time|="+curTime+"]").length==1) {
+                console.log(curTime);
+                for(var i=0 ; i<ap.length ; i++){
+                    if(ap[i].classList.contains("active")){
+                        if(ap[i].id != $("p[time|="+curTime+"]").attr("id")){
+                            ap[i].classList.remove("active");
+                            ap[i].classList.add("normal");
+                        }
+                        break;
+                    }
+                }
+                if(!$("p[time|="+curTime+"]").hasClass("active")){
+                    var idx = $("p[time|="+curTime+"]").attr("index")-5;
+                    if(scrollHeight==0)
+                        scrollHeight -= 83;
+                    else
+                        scrollHeight = -83 - idx*26;
+                    $("p[time|="+curTime+"]").removeClass("normal").addClass("active");
+                    $("#lrc_display ul").animate({ marginTop: scrollHeight }, 800);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>sina个人中心</title>
+		
+		<link rel="stylesheet" href="css/sina.css" />
+	</head>
+<body>
+	<div class="all">
+    <form id="f_info" method="post" >
+        <section class="header">
+            <nav>
+                <a id="gohome" class="back_header_left" href="javascript:;" alt="返回">
+                	<img src="imges/icon_back.png" />
+                </a>
+                <span>编辑个人资料</span>
+                <a id="save_top" class="save_header_right" href="javascript:;" alt="保存">
+                	<img src="imges/icon_save.png" />
+                </a>
+            </nav>
+        </section>
+        <section>       
+            <div  class="sec_info nicheng">
+                <span>昵称</span>
+                <input type="text" id="txt_act" class="custom_input" required="true"/>
+            </div>
+        </section>
+        <h2 class="tit-info-page">用户你好，微博允许普通用户一年修改一次昵称，请谨慎提交。微博会员最多可修改5次，
+            <a href="http://new.vip.weibo.cn/members/pay/vippay?sinainternalbrowser=topnav&amp;toolbar_hidden=1&amp;F=tq_nicheng">立即开通会员</a>。
+            <a href="http://kefu.weibo.com/faqdetail?id=532">查看详细规则</a>
+        </h2>
+        <section>
+        	<div  class="zhong sex" name="mysex">
+                <span>性别</span>
+                <input type="radio" id="sex_nv" name="sex" class="custom_radio" checked="true" value="男"/>男
+                <input type="radio" id="sex_nv" name="sex" class="custom_radio" value="女"/>女
+            </div>
+            <div  class="zhong address">
+                <span>所在地</span>
+                <select id="place">
+                    <option value="">请选择</option>
+                    <option value="bjc">北京市</option>
+                    <option value="tjc">天津市</option>
+                    <option value="shc">上海市</option>
+                    <option value="cqc">重庆市</option>
+                    <option value="hbp">河北省</option>
+                    <option value="sxp">山西省</option>
+                    <option value="hnp">河南省</option>
+                    <option value="sdp">山东省</option>
+                </select>
+                <select id="sel_city" style="margin-left: 40px;padding-right: 10px;"
+                        >
+                    <option value="">请选择</option>
+                    <option value="ybd">渝北区</option>
+                    <option value="yzd">渝中区</option>
+                    <option value="jbd">江北区</option>
+                    <option value="ddkd">大渡口区</option>
+                    <option value="spbd">沙坪坝区</option>
+                    <option value="jlpd">九龙坡区</option>
+                    <option value="bbd">北碚区</option>
+                    <option value="bnd">巴南区</option>
+                </select>
+            </div>
+            <div class="zhong mytext" >
+                <span>简介</span>
+                <textarea id="txt_remark" rows="3" ></textarea>
+            </div>
+        </section>
+        <section>
+        	<div  class="zhong birth">
+                <span>生日</span>
+                <!--<input type="date" />-->
+                <input type="text"  id="birth" value="" placeholder="选择日期" required="true"/>
+            </div>
+            <div  class="zhong email">
+                <span>邮箱</span>
+                <input id="email" type="email" placeholder="输入邮箱地址" required="true"/>
+            </div>
+            <div  class="zhong boke">
+                <span>博客</span>
+                <input id="boke" type="url" placeholder="输入博客地址" required="true"/>
+            </div>
+            <div  class="zhong qq">
+                <span>QQ</span>
+                <input id="qq" type="number" placeholder="输入QQ号" required="true"/>
+            </div>
+            <div  class="zhong tel">
+                <span>Tel</span>
+                <input id="tel" type="tel" placeholder="输入电话号码" required="true"/>
+            </div>            
+        </section>
+        <div class="save">
+        	<input type="button" value="保存" id="save_sub"/>	
+        </div>
+    </form>
+</div>
+<script src="layDate/laydate/laydate.js"></script>
+<script>
+	//年选择器
+	laydate.render({
+	  elem: '#birth'
+	  ,type: 'date'
+	});
+</script>
+
+<script type="text/javascript">
+			
+	document.getElementById("save_sub").onclick=function(){
+		var name = document.getElementById("txt_act").value;
+		//获得下拉框1的值
+        var select = document.getElementById("place");
+        var value = select.value;
+        var options = select.options;
+        var value1 = options[0].value;
+        var text1 = options[0].text;
+        var index = select.selectedIndex;
+        var selectedText1 = options[index].text;
+		//获得下拉框2的值
+		var select2 = document.getElementById("sel_city");
+        var value = select2.value;
+        var options = select2.options;
+        var val1 = options[0].value;
+        var txt1 = options[0].text;
+        var index2 = select2.selectedIndex;
+        var selectedText2 = options[index2].text;
+		
+		var abstract = document.getElementById("txt_remark").value;
+		var birth = document.getElementById("birth").value;
+		var email = document.getElementById("email").value;
+		var boke = document.getElementById("boke").value;
+		var qq = document.getElementById("qq").value;
+		var tel = document.getElementById("tel").value;
+		//获得性别
+		var chkObjs=null; 
+
+		var sexvalue=document.getElementsByName("sex")
+		for (var i=0;i<sexvalue.length;i++){ //遍历Radio 
+			if(sexvalue[i].checked){ 
+				sexvalue=sexvalue[i].value; 
+			} 
+		} 
+		
+		
+		if(document.getElementById("txt_act").checkValidity()
+			&&document.getElementById("birth").checkValidity()
+			&&document.getElementById("email").checkValidity()
+			&&document.getElementById("txt_remark").checkValidity()
+			&&document.getElementById("boke").checkValidity()
+		)
+		{
+			alert(
+				'已保存信息\n\n'+
+				'昵称：'+name+'\n'+
+				'性别：'+sexvalue+'\n'+
+				'所在地:'+selectedText1+' '+selectedText2+'\n'+
+				'简介：'+abstract+'\n'+
+				'生日：'+birth+'\n'+
+				'邮箱：'+email+'\n'+
+				'博客：'+boke+'\n'+
+				'QQ：'+qq+'\n'+
+				'手机：'+tel+'\n'
+			)
+		}
+	}
+</script>
+	</body>
+</html>

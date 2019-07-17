@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>涂鸦板</title>
+		<style>
+			*{margin: 0; padding: 0;}
+			.all{
+				width: 1010px;
+				height: 600px;
+				margin: auto;
+				margin-top: 20px;
+			}
+			canvas{
+				border: 2px solid #e16910;
+				border-radius: 30px;
+				box-shadow: 10px 10px 5px #888888;
+				margin-bottom: 20px;
+			}
+			.control{
+				width: 900px;
+				height: 50px;
+				line-height: 50px;
+				border-radius: 50px;
+				box-shadow: 10px 10px 5px #AAAAAA;
+				margin: auto;
+				padding-left: 40px;
+				background: #FFFFFF;
+			}
+			input{
+				background-color: #ffd248;
+				border: 0px;
+				outline:none;
+				border-radius: 50px;
+				width: 55px;
+				height: 30px;
+				margin-right: 10px;
+				vertical-align: middle;
+				color: white;
+			}
+			/*.input_color[type='color']::-webkit-color-swatch{
+				border: 0px;
+				width: 10px;
+				height: 10px;
+			} *//*设置内层的边框(放置从拾色器选取的颜色)样式，颜色改变的地方*/
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div>
+				<canvas id="myCanvas" width="1000px" height="500px" ></canvas>			
+			</div>
+			<div class="control">
+				<input type="color" id="color"/>
+				<input type="button" id="save" value="保存"/>
+				<input type="button" id="down" value="下载"/>
+				<input type="button" id="chexiao" value="撤销"/>
+				<input type="button"  id="clear" value="清屏"/>
+				<input type="button" id="xiangpi" value="橡皮"/>
+				<input type="button" id="line" value="线条"/>
+				<input type="range" id="size" value="1" min="1" max="10"/>
+			</div>		
+		</div>
+		
+		<div id="res"></div>
+		<script>
+		onload=function(){
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			var size = document.getElementById("size");
+				size.style.display="none";
+			
+			var isDrawing = false;
+			var isDownload = false;
+			var arr=new Array();            //定义一个数组
+			
+			canvas.addEventListener('mousedown',function(e){
+				var pointX=e.offsetX;
+				var pointY=e.offsetY;
+				//定义画笔
+				/*ctx.lineWidth=2;*/
+				//起笔
+				ctx.beginPath();
+				ctx.moveTo(pointX,pointY);
+				isDrawing = true;
+				
+				var imageData = ctx.getImageData(0,0,canvas.width,canvas.height);
+				arr.push(imageData);
+			});
+			canvas.addEventListener('mousemove',function(e){
+				if(isDrawing == true){
+				var tempX=e.offsetX;
+				var tempY=e.offsetY;
+				
+				ctx.lineTo(tempX,tempY);
+				ctx.stroke();
+				}
+						
+			});
+			canvas.addEventListener('mouseout',function(e){
+				isDrawing = false;
+			});
+			canvas.addEventListener('mouseup',function(e){
+				
+				isDrawing = false;
+				ctx.closePath();
+			});
+			
+			//画笔颜色
+			var color = document.getElementById("color");
+			color.addEventListener('change',function(){
+				document.getElementById("color").click();
+				ctx.strokeStyle=this.value;
+			});
+			//保存
+			var save=document.getElementById("save");
+			save.addEventListener('click',function(){
+				var saveImage = canvas.toDataURL('image/png');	
+				document.getElementById('res').innerHTML = '<img id="img" src="'+saveImage+'">';
+				isDownload=true ;
+			});
+			//下载
+			var down=document.getElementById("down");
+			down.addEventListener('click',function(e){
+			    if(isDownload==false){ 
+			      	alert("没有保存的图片")
+			    }else if(isDownload==true){
+			      saveFile(img.src,'graffitiBoard.png');
+			    }
+			}); 
+			    
+			var saveFile = function(data, filename){
+				var save_link = document.createElement('a');
+				save_link.href = data;
+				save_link.download = filename;
+				
+				var event = document.createEvent('MouseEvents');
+				event.initMouseEvent('click', true,false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				save_link.dispatchEvent(event);
+				  
+			}
+			//撤销
+			var chexiao=document.getElementById("chexiao");
+			
+			chexiao.addEventListener('click',function(e){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				ctx.putImageData(arr.pop(),0,0);
+			});
+			
+			//橡皮
+			var xiangpi = document.getElementById("xiangpi");
+			var size = document.getElementById("size");
+			xiangpi.addEventListener('click',function(){
+				ctx.strokeStyle="white";	
+			});
+			size.addEventListener('change',function(){
+				ctx.lineWidth=this.value;							
+			});
+			//清屏
+			var clear = document.getElementById("clear");
+			clear.addEventListener('click',function(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);				
+			});
+			//线条
+			var line = document.getElementById("line");
+			line.addEventListener('click',function(){
+				if(size.style.display=="none"){
+					size.style.display="";
+				}else{
+					size.style.display="none";
+				}
+			});
+			
+		}
+		</script>
+		
+	</body>
+</html>

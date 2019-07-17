@@ -1,0 +1,133 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	color: #00be06;
+	font-weight: bold;
+}
+img{
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.all{
+	width: 800px;
+	height: 510px;
+	background: #1f1f1f;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+.jindu{
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+.control{
+	width: 760px;
+	height: 40px;
+	background-color: #27272f;
+	line-height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.con_left{
+	float: left;
+}
+.con_right,.bs_right{
+	float: right;
+}
+.bs_left,.bs_left{
+	float: left;
+}
+.bs_speed {
+	position: absolute;
+	margin-top: -250px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.bs_left p{
+	width: 100px;
+	height: 40px;	
+	text-align: center;
+	line-height: 40px;
+	color: #00be06;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+}
+
+.bs_speed p:hover{
+	color: white;
+	background: #27272f;
+}
+.bs_speed{display: none;}
+/*.bs_left:hover .bs_speed{display:block;}*/
+input[id=ipt_progress] {	
+    -webkit-appearance: none;
+    width: 770px;
+    height: 5px;
+    margin-left: 15px;
+  background: #1afa29;
+    /*background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;*/
+    background-size: 0% 100%;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+
+input[id=ipt_progress]::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    /*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/*/
+}
+input[type=range]:focus {
+    outline: none;/*原始的控件获取到焦点时，会显示包裹整个控件的边框，所以还需要把边框取消。*/
+    }
+input[id=ipt_progress]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    margin-top: -4px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff;
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+ /**/
+        input[id=ipt_volume] {
+            /*transform: rotate(270deg) translate(73px,-79px);*/
+            -webkit-appearance: none;
+            width: 100px;
+            height: 5px;
+            background: #1afa29;
+            /*background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;*/
+            background-size: 0% 100%;
+            border-radius: 6px; /*这个属性设置使填充进度条时的图形为圆角*/
+        }
+       
+        input[id=ipt_volume]::-webkit-slider-runnable-track {
+            height: 5px;
+            border-radius: 6px; /*将轨道设为圆角的*/
+            /*box-shadow: 0 1px 1px #0d1112, inset 0 1px 1px #0d1112;*/ /*轨道内置阴影效果*/
+        }
+
+        input[id=ipt_volume]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            margin-top: -4px; /*使滑块超出轨道部分的偏移量相等*/
+            background: #ffffff;
+            border-radius: 50%; /*外观设置为圆形*/
+            border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+            box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+        }
+        /*.range_vo{
+        	width: 40px;
+        	height: 100px;
+        	background: orchid;
+        	
+        }*/
+/*        .bs_right:hover input{
+        	display: block;
+        }
+*/

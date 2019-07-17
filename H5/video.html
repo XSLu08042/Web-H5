@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义播放器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />  
+		<link rel="stylesheet" href="css/video.css" />		
+	</head>
+	<body>
+	<div class="all">
+    <section>
+     	<video id="myVideo" width="800" height="440" src="videos/video_hua.mp4"
+               poster="imges/yulan_hua.png">
+            您的浏览器不支持video标签
+        </video>
+        <!--../videos/apple.mp4-->
+    </section>
+    <section class="con">
+     	<div class="jindu">
+     		<input type="range" id="ipt_progress" max="100" min="0" value="0"/>     		
+     	</div>
+     	<div id="showTime"></div>
+     	<div class="control">
+	        <div class="con_left">
+	        	<img class="play" id="btn_play" src="img/start.png" alt="播放/暂停" onclick="playPause()"/>
+	        	<img class="play" id="btn_low" src="img/low.png" onclick="skip(-5)"/>
+	        	<img class="play" id="btn_quick" src="img/quick.png" onclick="skip(5)"/>	       
+	        	<span id="spn_current">00:00:00</span>
+	        	&nbsp;/&nbsp;
+	        <span id="spn_total">00:00:00</span>
+	        </div>
+	        <div class="con_right">
+	        	<div class="bs_left"> 
+	        		<p class="bs_main" id="bs_main">倍速</button>
+		        	<div class="bs_speed" id="selRate">
+	                   <p id="speed1" value="0.5">0.5</p>
+	                   <p id="speed2" value="1" selected>1.0</p>
+					   <p id="speed3" value="1.25">1.25</p>
+					   <p id="speed4" value="1.5">1.5</p>
+					   <p id="speed5" value="2">2.0</p>
+					</div>
+				</div>
+				<div class="bs_right">
+					<img class="play" id="btn_yinliang" src="img/yinliang.png" onclick="jingyin()" />
+					
+					<input type="range" id="ipt_volume" max="100" min="0" step="1" value="50" onclick="setvalue()"/>	        	
+	        		<img class="play" id="btn_fullscreen" src="img/big.png" />
+				</div>
+	        </div>
+        </div>
+        
+     </section>
+     </div>
+
+      <script type="text/javascript" src="js/videotest.js"></script>
+	</body>
+</html>

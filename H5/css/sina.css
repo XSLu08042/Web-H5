@@ -1,0 +1,158 @@
+ *{ margin: 0; padding: 0;}
+body{background: #f2f2f2;}
+.all{margin: auto;}
+.header{
+    height: 45px;
+    line-height: 45px;
+    /*width: 100%;*/
+    /*margin: auto;*/
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+    font-family: 微软雅黑;
+    padding: 0 8px;
+    border-bottom: #bfbfbf solid 1px;
+    -webkit-box-shadow: inset 0 -1px 0 #e5e5e5, 0 1px 1px #ddd;
+    box-shadow: inset 0 -1px 0 #e5e5e5, 0 1px 1px #ddd;
+    background-image: linear-gradient(to bottom,#fff,#eaeaea);
+}
+.header a img{
+    width: 24px;
+    height: 25px;
+    vertical-align: middle;
+    line-height: 45px;
+}
+.back_header_left{
+	float: left;
+}
+.save_header_right{
+	float: right;
+	margin-right: 5px;
+}
+.header span{
+	color: #000;
+    font-family: 微软雅黑;
+    font-size: 1.25rem;
+    line-height: 40px;
+    display: inline-block;
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sec_info,.msn{
+	height: 40px;
+	background: white;
+	margin:12px 12px;
+	padding-left: 15px;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	line-height: 40px;
+	color: #333333;
+	font-weight:700;
+	font-size: 0.875rem;	
+}
+.nicheng input,.birth input,.email input,.boke input,.qq input,.tel input{
+	width: calc(100% - 115px);
+	height: 28px;
+	color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0px;
+	outline:none;
+}
+.tit-info-page{
+	font-size: 0.875rem;
+	font-weight: bold;
+	color: #333333;
+	margin-left: 12px;
+	margin-right: 12px;
+}
+.tit-info-page a{
+	text-decoration: none;
+	color: #007bff;
+}
+.tit-info-page a:hover{
+	text-decoration: underline;
+	color: #0056b3;
+}
+.zhong{
+	height: 40px;
+	background: white;
+	margin:0px 12px;
+	padding-left: 15px;
+	border-radius: 3px;
+	border-bottom: 1px solid #dadada;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	line-height: 40px;
+	color: #333333;
+	font-weight:700;
+	font-size: 0.875rem;
+}
+.sec_info span,.zhong span{ margin-right: 30px;}
+.sex{margin-top: 12px;border-top: 1px solid #dadada;}
+.sex input{margin-left: 15px;}
+.zhong select{
+    color: black;
+    cursor: default;
+    border: 0;
+    font: 400 16px Arial;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url(../imges/icon_arrow.png) no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding-right: 28px;
+    background-size: 25px;
+}
+.zhong select option{
+    font: 400 16px Arial;
+}
+.mytext{
+	height:auto; 
+	line-height: normal;
+	padding-top: 10px; 
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.zhong textarea{
+	margin-top: -10px;
+	margin-bottom: 10px;
+	width: calc(100% - 140px);
+	margin-left: 65px;
+   	padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.birth{
+	margin-top: 20px;
+}
+.qq span{margin-right: 35px;}
+.tel span{margin-right: 35px;}
+.save{
+	margin-left:10px;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+.save input{
+	height: 40px;
+	width: 100%;
+	border: #3aaa46 solid 1px;
+    border-color: #3aaa46 #33973d #2c8435;
+	background-color: #3fbb4d;
+	background-image: linear-gradient(to bottom,#3fbb4d 0,#349d3f 92%,#3aad45 100%);
+	box-shadow: 0 1px 2px rgba(0,0,0,.25), inset 0 1px #59c665;
+    text-shadow: 0 1px 0 rgba(0,0,0,.35);
+    border-radius: 6px;
+	text-align: center;
+	color: white;
+	font-size: .875rem;
+    line-height: 40px;
+    font-weight: 700;
+}
