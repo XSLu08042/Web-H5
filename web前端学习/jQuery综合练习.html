@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/default.css" />
+		<link rel="stylesheet" href="css/default.date.css" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/picker.js" ></script>
+		<script type="text/javascript" src="js/picker.date.js" ></script>
+		<style>
+			table{
+				border: 1px black solid;
+				border-collapse: collapse;
+			}
+			td{
+				border: 1px black solid;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+			}
+			a{text-decoration: none;}
+			.tb_title{
+				background: #eeeeee;
+			}
+			.data{width: 59px;}
+		</style>
+		<script type="text/javascript">
+			$(function(){				
+				//增加
+				var row_index=1;
+				$("#add").click(function(){
+					row_index++; 
+					//alert(row_index);
+					var newRow=$("#tborder") //插入的行
+					//alert(newRow);
+					str = "<tr id='del"+row_index+"'><td>从<input id='dataone"+row_index+"' class='hdata' type='text'/>到<input id='datatwo"+row_index+"' class='2data' type='text'/></td><td><input type='text'/></td><td><input type='text'/></td><td><input type='text'/></td><td><input type='text'/></td><td><a href='#' id='delete' onclick='removeRow("+row_index+")' title='删除'>X</a></tr>";
+	               	newRow.append(str);
+	               	$("#dataone"+row_index).pickadate({format: 'yyyy-mm-dd'});
+	               	$("#datatwo"+row_index).pickadate({format: 'yyyy-mm-dd'});
+				});
+				$("#dataone"+row_index).pickadate({format: 'yyyy-mm-dd'});
+	            $("#datatwo"+row_index).pickadate({format: 'yyyy-mm-dd'});	           								
+			});
+			//删除
+			function removeRow(rowIndex){
+					if(confirm("真的打算删除吗？")){
+						//alert(rowIndex);
+						$("#del"+rowIndex).remove();
+					}
+				}
+		</script>
+	</head>
+	<body>
+		<div class="title">员工信息详情</div>
+		<div class="content">
+			姓名：<input type="text" /><br><br>
+			性别：<input type="radio" name="sex" checked="checked"/>男
+			
+				<input type="radio" name="sex"/>女<br><br>
+			身份证：<input type="text" /><br><br>
+			基本工资：<input type="text" /><br><br>
+			<table id="tborder">
+				<tr>
+					<td class="tb_title" colspan="6">工作经历</td>					
+				</tr>
+				<tr>
+					<td>时间段</td>
+					<td>公司名称</td>
+					<td>职务</td>
+					<td>主要工作及职责</td>
+					<td>证明人</td>
+					<td>操作<a id="add" type="button" title="增加">(+)</a></td>
+				</tr>
+				<tr>
+					<td>从<input id="dataone1" class="hdata"/>到<input id="datatwo1" class="2data"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><input type="text"/></td>
+					<td><a href="#" id="delete" title="删除" onclick="return false;" style="color: gray;">X</a></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

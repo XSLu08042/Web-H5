@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*字面方式创建一*/
+			var chang={};
+			chang.show=function(){
+				chang.length=10;
+				chang.width=3;
+				console.log("面积是"+chang.length*chang.width);
+			}
+//			chang.show();
+
+			/*字面方式创建升级版*/
+			var chang={
+				length:10,
+				width:5,
+				show:function(){
+					console.log("面积是"+chang.length*chang.width);
+				}
+			}
+//			chang.show();
+
+			/*构造函数*/
+			function chang2(length,width){
+				this.length=length;
+				this.width=width;
+				this.show = function(){
+					console.log(this.length+this.width);
+				}
+			}
+			var ch=new chang2(5,8);
+			//ch.show();
+			
+			/*Object方式*/
+			var chang3=new Object();
+			chang3.length=10;
+			chang3.width=5;
+			/*chang3.show=function(){
+				
+			}*/
+			//console.log(chang3.length);
+		</script>
+		
+		<select id="province">
+			<!--<option>--请选择省/市--</option>-->
+		</select>
+		<select id="city">
+			<!--<option>--请选择城市--</option>-->
+		</select>
+		<select id="area">
+			<!--<option>--请选择地区--</option>-->
+		</select>
+		<script type="text/javascript">
+			//数据
+			var pData = new Array('北京','重庆','四川省');
+			var cData = new Array(
+				new Array('北京市'),
+				new Array('重庆市'),
+				new Array('成都市','德阳市','绵阳市','攀枝花市','泸州市','内江市','广元市','自贡市')
+			);
+			var aData = new Array(
+				new Array(
+					new Array('东城区','西城区','朝阳区','丰台区')
+				),
+				new Array(
+					new Array('渝中区','沙坪坝区','江北区','巴南区','渝北区','大渡口区','九龙坡区','南岸区')
+				),
+				new Array(
+					new Array('武侯区','锦江区','金牛区','成华区','青羊区'),
+					new Array('旌阳区','中江县','罗江县'),
+					new Array('涪城区','游仙区','三台县','盐亭县','安 县','梓潼县','北川羌族自治县','平武县','江油市 '),
+					new Array('东区','西区','仁和区','米易县','盐边县'),
+					new Array('江阳区','纳溪区','龙马潭区','泸县','合江县','叙永县','古蔺县'),
+					new Array('市中区','东兴区','隆昌县','威远县','资中县'),
+					new Array('利州区','朝天区','元坝区苍溪县','剑阁县','旺苍县','青川县'),
+					new Array('自井区','贡井区','大安区','沿滩区','荣县','富顺县')
+				)
+			);
+			var p = document.getElementById('province');
+			var c = document.getElementById('city');
+			var a = document.getElementById("area");
+			
+			for(var i=0;i<pData.length;i++){
+				//创建option对象
+				var op = new Option(pData[i],i);
+				//添加option
+				p.options.add(op);
+			}
+			bindCity();
+			bindArea();
+			function bindCity(){
+				c.options.length = 0;
+				var item = p.value;
+				var citys = cData[item];
+				for(var i=0;i<citys.length;i++){
+					//创建option对象
+					var op = new Option(citys[i],i);
+					//添加option
+					c.options.add(op);
+				}
+				bindArea();
+			}
+			p.onchange = bindCity;
+			function bindArea(){
+				a.options.length = 0;
+				var item1 = p.value;
+				var item2 = c.value;
+				var areas = aData[item1][item2];
+				for(var i=0;i<areas.length;i++){
+					//创建option对象
+					var op = new Option(areas[i],i);
+					//添加option
+					a.options.add(op);
+				}
+			}
+			c.onchange = bindArea;
+		</script>
+	</body>
+</html>
