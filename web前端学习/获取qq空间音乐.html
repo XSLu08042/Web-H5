@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<style>
+			body{
+				background: #134136;
+				color: white;
+			}
+			ul li{
+	  			list-style: none;
+	  			height: 40px;
+	  			width: 550px;
+	  			line-height: 40px;
+	  			padding-left: 20px;
+	  			padding-right: 20px;
+	  			border: 1px solid #000000;
+	  			font-size: 16px;
+	  			margin: auto;
+	  			background: white;
+	  			color: black;
+	  		}
+	  		.title{
+	  			margin-top: 20px;
+	  			font-size: 28px;
+		  		font-weight: bold;
+		  		font-family: "微软雅黑";
+		  		text-align: center;
+	  		}
+	  		.qq{
+	  			font-size: 16px;
+	  			font-weight: bold;
+	  			width: 400px;
+	  			height: 40px;
+	  			margin: 30px auto;
+	  			text-align: center;
+	  		}
+	  		.qqnum{
+	  			height: 25px;
+	  		}
+	  		.search{
+	  			height: 30px;
+	  			width: 50px;
+	  			color: white;
+	  			background: #4391ea;
+	  			border: none;
+	  		}
+	  		.id{
+	  			color: white;
+	  			margin-top: 20px;
+	  			background: #580a18;
+	  		}
+	  		.song_url{
+	  			height:60px;
+	  			line-height: 23px;
+	  		}
+	  		.no_jieguo{
+	  			height: 40px;
+	  			width: 550px;
+	  			border-radius: 9px;
+	  			line-height: 40px;
+	  			background: #f2dede;
+	  			text-align: center;
+	  			font-size: 18px;
+	  			color: brown;
+	  			margin: auto;
+	  		}
+		</style>
+	</head>
+	<body>
+		<div class="title">好友QQ空间背景音乐</div>
+		<div class="qq">
+			QQ号码：<input type="text" class="qqnum"/>
+			<input type="button" class="search" value="查询" />
+		</div>
+		<div class="jieguo"></div>
+		<script type="text/javascript">
+			$(function(){
+				$(".search").click(function(){
+					
+					var qq=$(".qqnum").val();
+					url="http://qzone-music.qq.com/fcg-bin/cgi_playlist_xml.fcg?uin="+qq+"&json=1&g_tk=1916754934"
+					$.ajax({
+						type:"get",
+						url:url,
+						dataType:"jsonp",  //数据格式设置为jsonp
+	            		jsonp:"jsonpCallback",
+			    		success:function(data){
+			    			var songs=data.qqmusic.playlist.song;
+			    			if(songs.length==0){
+			    				var str="<div class='no_jieguo'>此QQ空间没有设置背景音乐</div>"
+			    			}else{
+				    			var str="<ul>";  
+				    			$.each(songs, function(id,item) {
+				    				var i=id+1;
+				    				str+="<li class='id'>"+"第"+i+"首"+"</li>"
+				    				str+="<li class='song_name'>"+"歌名："+item.xsong_name+"</li>";
+				           			str+="<li class='singer_name'>"+"演唱者："+item.xsinger_name+"</li>";
+				            		str+="<li class='song_url'>"+"歌曲连接："+item.xsong_url+"</li>";
+				    			});
+				    			str+="</ul>";  
+				    		}
+	            			$(".jieguo").html(str);
+			    		}
+					});
+				}) 
+			})
+		</script>
+	</body>
+</html>
