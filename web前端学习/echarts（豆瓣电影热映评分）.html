@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts-en.common.js"></script>
+	</head>
+	<body>
+		<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+		// 显示标题，图例和空的坐标轴
+		myChart.setOption({
+		    title: {
+		        text: '豆瓣电影热映评分'
+		    },
+		    tooltip: {},
+		    legend: {
+		        data:['评分']
+		    },
+		    xAxis: {
+		        data: [],
+				axisLabel:{
+					interval:0,
+					rotate:-30
+				}
+		    },
+		    yAxis: {},
+		    series: [{
+		        name: '评分',
+		        type: 'bar',
+		        data: []
+		    }]
+		});
+		
+		// 异步加载数据
+		$.ajax({
+			type:"get",
+			url:"https://api.douban.com/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b",
+			async:true,
+			dataType:"jsonp",   
+			success:function(data){
+				//console.log(data.subjects[0].title)
+				//console.log(data.average)
+				var dataName = [];
+				var dataVal = [];
+				for(var i=0;i<data.subjects.length;i++){
+					dataName[i] = data.subjects[i].title;
+					dataVal[i] = data.subjects[i].rating.average;
+				}
+				// 填入数据
+				myChart.setOption({
+				    xAxis: {
+				        data: dataName
+				    },
+				    series: [{
+				        // 根据名字对应到相应的系列
+				        name: '评分',
+				        data: dataVal
+				    }]
+				});
+			}
+		});
+		
+    </script>
+
+	</body>
+</html>
