@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <label>ID:
+            <input type="text" v-model="id">
+        </label>
+
+        <label>Name
+            <input type="text" v-model="name">
+        </label>
+
+        <label>
+            <input type="button" value="添加" @click="add">
+        </label>
+
+        <p v-for="item in list" :key="item">
+            <input type="checkbox">
+            {{item.id}} -------------- {{item.name}}
+        </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id:'',
+                name:'',
+                list: [
+                    {id: 1, name: '李斯' },
+                    {id: 2, name: '韩非' },
+                    {id: 3, name: '嬴政' },
+                    {id: 4, name: '赵高' },
+                    {id: 5, name: '荀子' }
+                ]
+            },
+            methods: {
+                add(){
+                    //添加方法
+                    //this.list.push({id: this.id, name: this.name})
+                
+                    this.list.unshift({id: this.id, name: this.name})
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
