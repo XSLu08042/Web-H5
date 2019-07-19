@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>非父子组件之间的传值(Bus/总线/发布订阅模式/观察者模式</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <!-- 总线机制 -->
+    <div id="app">
+        <child content="Dell"></child>
+        <child content="Lee"></child>
+    </div>
+    <script>
+        //创建实例
+        Vue.prototype.bus = new Vue()
+
+        Vue.component('child', {
+            //防止直接修改传递归来的值 仍
+            data() {
+               return {
+                   selfContent: this.content
+               }
+            },
+            props: {
+                content: String
+            },
+            template: '<div @click="click">{{selfContent}}</div>',
+            methods: {
+                click() {
+                    //  alert(this.content)
+                    this.bus.$emit('change', this.selfContent)
+                }
+            },
+            //组件被挂载时执行的函数
+            mounted() {
+                var this_ = this
+                //弹出了两次弹窗，因为一个组件里去触发事件的时候，这两个组件都进行了同一事件的监听
+                this.bus.$on('change', function (msg) {
+                    // alert(msg)
+                    //this.content = msg //直接这样写，this的作用域发生了变化
+                    this_.selfContent = msg
+                })
+            }
+            //有警告
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

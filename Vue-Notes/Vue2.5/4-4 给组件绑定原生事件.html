@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>给组件绑定原生事件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--组件中是 自定义事件 -->
+        <!-- <child @click="click"></child> -->
+
+        <!-- 监听原生事件 -->
+        <child @click.native="click"></child>
+
+    </div>
+    <script>
+
+        Vue.component('child', {
+            //1、
+           // template: '<div @click="click">child</div>',
+            // methods: {
+            //     click(){
+            //         alert("child click")
+            //         this.$emit('click')//触发自定义事件
+            //     }
+            // }
+
+            //2、监听原生事件
+            template: '<div>child</div>'
+
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                click(){
+                    alert("click")
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

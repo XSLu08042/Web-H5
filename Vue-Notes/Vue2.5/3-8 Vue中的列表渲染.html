@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 每个循环项加上key值，且尽量不用它的index作为key值，使用每项唯一的id标识作为key值，使性能最优 -->
+        <!-- <div v-for="(item, index) in list" :key="item.id">
+            {{item.title}}==========={{index}}
+        </div> -->
+        <!-- 修改数组内容的时候，不可以直接通过数组下标形式改变(数据变了，但页面没有改变)，eg:vm.list[4]={xxxxx}，
+            只能通过vue提供的数组变异方法：push, pop, shift, unshift, splice, sort, reverse -->
+
+
+        <!-- 不想在最外层加div,可以用template占位符 -->
+        <!-- <template v-for="(item, index) in list" :key="item.id">
+            <div>
+                {{item.title}}==========={{index}}
+
+            </div>
+            <span>
+                {{item.title}}
+            </span>
+        </template> -->
+
+        <div v-for="(item, key, index) in userInfo">
+            {{item}}=========={{key}}========={{index}}
+        </div>
+        <!-- 数据修改vm.userInfo.age = 27 -->
+        <!-- 1、数据的增加vm.userInfo =  name: "Dell",
+                    age: 24,
+                    gender: "male",
+                    salary: "secret"，
+                    address: "beijing"
+                -->
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                userInfo: {
+                    name: "Dell",
+                    age: 24,
+                    gender: "male",
+                    salary: "secret"
+                },
+                list: [
+                    {
+                        id: "01011",//唯一标识
+                        title: "hello"
+                    },
+                    {
+                        id: "01012",
+                        title: "lee"
+                    },
+                    {
+                        id: "01013",
+                        title: "dell"
+                    },
+                    {
+                        id: "01014",
+                        title: "wqwq"
+                    }
+                ]
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

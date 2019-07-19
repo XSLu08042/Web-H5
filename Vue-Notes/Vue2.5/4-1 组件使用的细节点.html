@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组建使用的细节点</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <!--  如何使用 is 属性解决标签渲染中出现小bug-->
+    <div id="app">
+        <table>
+            <tbody>
+                <!-- <tbody>里使用组件,用 is="组件名" -->
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+
+                <ul>
+                    <li is="row"></li>
+                </ul>
+                <!-- ul, ol, select 里使用组件,用 is="组件名" -->
+            </tbody>
+        </table>
+
+        <!-- 标签中加了ref，通过$refs.hello获取到的是dom元素，
+            组件中加了ref，通过$refs.hello获取到的组件的引用
+          -->
+        <item ref="hello" @click="handClick">
+
+            hello world!!!
+        </item>
+
+        <br><br>计算器<br>
+        <!-- @change="click"监听事件 -->
+        <counter ref="one" @change="click"></counter>
+        <counter ref="two" @change="click"></counter>
+        <div>{{total}}</div>
+    </div>
+    <script>
+        //1、在非根组件里不能直接data:{},这样定义，这里的data的定义要求后面的值必须是一个函数,同时这个函数要返回一个对象，这个对象里包含你所定义的数据
+        //因为一个子组件可以被调用多次，这样可以避免子组件之间互相影响
+        // Vue.component('row', {
+        //     data() {
+        //         return {
+        //             content: "这是一行"
+        //         }
+        //     },
+        //     template: '<tr><td>{{content}}</td></tr>'
+        // })
+
+
+        // 2、计算器
+        Vue.component('counter', {
+            template: '<div @click="click">{{number}}</div>',
+            data() {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                click() {
+                    this.number++
+                    //子组件向父组件传值
+                    this.$emit('change')
+                }
+            }
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                total: 0
+            },
+            methods: {
+                handClick() {
+                    //  alert("click")
+                    console.log(this.$refs.hello.innerHTML)
+                },
+                click() {
+                    // alert('change')
+                    //  console.log(this.$refs.one.number)
+                    //  console.log(this.$refs.two.number)
+
+                    this.total = this.$refs.one.number + this.$refs.two.number
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

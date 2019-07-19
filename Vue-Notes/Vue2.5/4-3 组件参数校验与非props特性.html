@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件参数校验与非props特性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        
+        <child content="hello world"></child>
+    </div>
+    <script>
+        Vue.component('child', {
+            //props: ['content'],
+            //给content做一些约束
+            props: {
+                //表示数字和字符串都可以
+                // content: [String, Number]
+                //表示对象
+                content: {
+                    type: String,
+                    //  required: true,  //表示content必传值
+                    //  default: 'default', //content默认值
+                    validator(value) {
+                        return (value.length > 5)
+                    }//长度校验(自定义校验)
+                }
+            },
+            template: '<div>{{content}}</div>'
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

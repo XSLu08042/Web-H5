@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- {{firstName + " " + lastName}}建议不要在表达式里写逻辑 -->
+        
+        <!-- 对应计算属性computed -->
+        <!-- {{fullName}} -->
+        <br>
+        计算属性的方法调用
+        <br>
+        {{fullName()}}
+        {{age}}
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                firstName: "Dell",
+                lastName: "Lee",
+                //fullName: "Dall Lee"这样写数据冗余          
+                fullName: "Dall Lee", //3、使用 watch 监听器来实现
+                age: 24
+            },
+            //1、计算属性**优先推荐**(它内置缓存,性能高,体现在它依赖的firstName和lastName，只要这两个数据不发生改变，这个计算属性就不会再重新计算了)
+            //参考上面例子：在网页控制台中修改age的值，vm.age = 27回车，age重新渲染，但是fullName没有重新渲染
+            // computed: {
+            //     fullName() {
+            //         console.log("计算了一次")
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // },
+
+            //2、可以用方法的属性来实现计算属性的同样功能
+            //但是这种方法没有缓存机制
+            // methods: {
+            //     fullName() {
+            //         console.log("计算了一次");
+            //         return this.firstName + " " + this.lastName
+            //     }
+            // }
+
+            //3、使用 watch 监听器来实现上面同样的功能
+            //在网页控制台中修改age的值，vm.age = 27回车，age重新渲染，但是fullName没有重新渲染
+            //它也有一个缓存机制，只是语法比computed复杂
+            watch: {
+                firstName(){
+                    console.log("计算了一次");
+                    return this.firstName + " " + this.lastName
+                },
+                lastName(){
+                    console.log("计算了一次");
+                    return this.firstName + " " + this.lastName
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

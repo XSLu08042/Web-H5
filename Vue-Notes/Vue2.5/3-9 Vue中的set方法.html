@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <h1>在Vue中希望实现改变数据，页面也跟着改变有3种方法：</h1><br>
+    1、直接改变数组引用<br>
+    2、点用数组变异方法：pop, push等<br>
+    3、set<br>
+    <h1>希望改变对象的数据，页面会跟着改变有2种方法：</h1><br>
+    1、直接改变对象引用<br>
+    2、set方法<br><br>
+    <div id="app">
+        <div v-for="(item, key, index) in userInfo">
+            {{item}}=========={{key}}========={{index}}
+        </div>
+<!-- 2、Vue对象方法:添加数据Vue.set(vm.userTnfo, "address", "beijing") -->
+<!-- 3、vm实例方法:添加数据vm.$set(vm.userTnfo, "address", "beijing") -->
+<!-- set、数组 :
+方法一：Vue.set(vm.userTnfo2, 1, 5)
+方法二：vm.$set(vm.userTnfo2, 2, 10)
+-->
+</div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                userInfo: {
+                    name: "Dell",
+                    age: 24,
+                    gender: "male",
+                    salary: "secret"
+                },
+                userInfo2:[1, 2, 3, 4]
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

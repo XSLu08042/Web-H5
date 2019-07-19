@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>父子组件的数据传递</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 父组件传值通过属性来传递的 -->
+        <!-- count前不加 ： 传递给子组件的是一个字符串，加 ： 传递给子组件的是一个数字 -->
+        <counter :count="2" @change='totalclick'></counter>
+        <counter :count="3" @change='totalclick'></counter>
+
+        <!-- 子组件向父组件传值通过事件形式来传递的 -->
+        <div>{{total}}</div>
+
+    </div>
+    <script>
+        var counter = {
+            props: ['count'],
+            data() {
+                return {
+                    number: this.count
+                }
+            },
+            template: '<div @click="click">{{number}}</div>',
+            methods: {
+                click() {
+                    //单项数据流：父组件可以向子组件传递参数，但是子组件不能直接反过来修改传过来的参数
+                    // this.count ++ 在data中定义一个number来接受this.count,修改numbe
+                    this.number = this.number + 2;
+                    console.log(this.number)
+                    this.$emit('change', 2) //2是布长
+                }
+            }
+        }
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                total: 5
+            },
+            components: {
+                counter: counter
+            },
+            methods: {
+                totalclick(step) {
+                    // alert(step)
+                    this.total += step
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

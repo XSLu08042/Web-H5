@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中CSS动画原理</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .fadex-enter{
+            opacity: 0;
+        }
+        .fadex-enter-active{
+            transition: opacity 3s;
+        }
+        .fadex-leave-to{
+            opacity: 0;
+        }
+        .fadex-leave-active{
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--transition 动画，name随便起,上面样式名字根据name取。如果没有name,那么上面样式名前缀默认为v,例如： .fade-enter  -->
+        <transition name="fadex">
+            <div v-if="show">hello world</div>
+        </transition>
+        <button @click="click">click</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show: true
+            },
+            methods: {
+                click() {
+                    this.show = !this.show
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

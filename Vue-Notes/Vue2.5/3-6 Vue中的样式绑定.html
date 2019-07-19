@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .activated {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+      1、 class对象绑定 <br>
+       第一种方式:对象形式
+       <br>
+        <div @click='handleDivClick' :class="{activated: isActivated}">
+            hello world
+        </div>
+        <br>
+        第二种方式:数组形式
+        <br>
+        <div @click='handleDivClick2' :class="[activated,activatedOne]">
+            hello world2
+        </div>
+        <br><br>
+        2、内联样式
+        <br>
+        方式一：对象形式
+        <br>
+        <!-- <div :style="styleObj" @click="handleDivClick3">
+            hello hello world3
+        </div> -->
+        <br>
+        方式二：数组形式
+        <br>
+        <div :style="[styleObj,{fontSize: '20px'}]" @click="handleDivClick3">
+                hello hello world4
+            </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isActivated: false,
+                activated: "",
+                activatedOne: "activated-one",
+                styleObj: {
+                    color: "black"
+                }
+            },
+            methods: {
+                handleDivClick() {
+                    this.isActivated = !this.isActivated
+                },
+                handleDivClick2() {
+                    // if (this.activated === "activated") {
+                    //     this.activated = " ";
+                    // }else{
+                    //     this.activated = "activated";
+                    // }
+                    //下面是上面的简写
+                    this.activated = this.activated === "activated" ? "" : "activated"
+                },
+                handleDivClick3(){
+                    this.styleObj.color = this.styleObj.color ==="black" ? "red" : "black";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

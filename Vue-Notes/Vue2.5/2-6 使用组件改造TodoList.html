@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TodoList</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="inputValue">
+        <button @click="dodo">提交</button>
+        <ul>
+            <!-- <li v-for="item in list">{{item}}</li> -->
+            <todo-item :content="item" v-for="item in list"></todo-item>
+        </ul>
+    </div>
+    <script>
+        //全局组件
+        // Vue.component("TodoItem", {
+        //     props: ['content'],
+        //     template: "<li>{{this.content}}</li>"
+        // })
+
+        //局部组件
+        var TodoItem={
+            props: ['content'],
+            template: "<li>{{this.content}}</li>"
+        }
+        var vm = new Vue({
+            el: '#app',
+            components: {
+                TodoItem: TodoItem
+            },
+            data: {
+                list: [],
+                inputValue: ''
+            },
+            methods: {
+                dodo() {
+                    this.list.push(this.inputValue)
+                    this.inputValue = ''
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

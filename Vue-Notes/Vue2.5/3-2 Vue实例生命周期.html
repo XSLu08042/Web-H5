@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue实例生命周期钩子</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">hello world</div>
+    <script>
+        //生命周期函数：vue实例在  某一个时间点  会自动执行的函数
+        var vm = new Vue({
+            el: '#app',
+            template: '<div>{{test}}</div>',
+            data: {
+                test: "hello www"
+            },
+            //'是否有模板，走哪条路。详情参考vue官方文档Vue实例-->生命周期图示'  template: '<div>hello world</div>',
+            beforeCreate() {
+                console.log("beforeCreate")
+            },
+            created() {
+                console.log("created")
+            },
+            beforeMount() {
+                console.log(this.$el)
+                console.log("beforeMount")
+            },
+            mounted() {
+                console.log(this.$el)
+                console.log("mounted")
+            },
+            //直接运行下面两个发现并没有执行，需要在控制台中输入vm.$destroy()
+            beforeDestroy(){
+                console.log("beforeDestroy")
+            },
+            destroyed(){
+                console.log("destroyed")
+            },
+            //在控制台修改数据vm.text="xxx"回车，下面两个运行
+            beforrUpdate(){
+                console.log("beforrUpdate")
+            },
+            updated(){
+                console.log("updated")
+            },
+        });
+    </script>
+</body>
+
+</html>

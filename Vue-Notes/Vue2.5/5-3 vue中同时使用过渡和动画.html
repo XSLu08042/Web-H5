@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue中同时使用过渡和动画</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--animate.css库提供的是@keyframes动画效果  -->
+    <div id="app">
+        <!-- 3、引用animate.css库文件 -->
+        <!-- 自定义appear,参考以下写法 -->
+        <!--添加属性type="transition"  表示以transition时长为总时长 -->
+         <!--添加属性:duration="5000"   表示自己定义动画总时长 -->
+        <transition name="fade"
+             
+            :duration="{enter:5000, leave:10000}" 
+            appear
+            enter-active-class="animated swing fade-enter-active" leave-active-class="animated shake fade-leave-active"
+            appear-active-class="animated swing">
+            <div v-if="show">hello world</div>
+        </transition>
+
+        <button @click="click">click</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show: true
+            },
+            methods: {
+                click() {
+                    this.show = !this.show
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <!--下面例子中， v-show的Dom元素存在，但是添加的样式<div style="display: none;">hellloworld</div>，
+    v-if的Dom元素不存在，所以相对来说 v-show更好一些，它不会频繁的去增删Dom元素，性能高一些-->
+    <div id="app">
+        <div v-if="show" data-test="v-if">hello world</div>
+        <!-- <div v-else>Bye world</div> -->
+        <!-- v-if 和 v-else 要紧贴在一起使用 -->
+
+        <div v-if="show2==='a'">This is A</div>
+        <div v-else-if="show2==='b'">This is B</div>
+        <div v-else> This is others</div>
+        <!-- <div v-show="show" data-test="v-show">{{msg}}</div> -->
+
+        <!-- 发现当show=true时候i，以前在用户名中填写的信息还在，是因为vue会复用以前同样的已有的Dom -->
+        <!-- 在Dom元素上加一个 key 值 解决上面的问题-->
+        <div v-if="show" key="username">
+            用户名：<input />
+        </div>
+
+        <div v-else="show" key="email">
+            邮箱名：<input />
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show: false,
+                msg: "hellloworld",
+                show2: "a"
+            },
+            methods: {}
+        });
+    </script>
+</body>
+
+</html>

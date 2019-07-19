@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中使用animate.css库</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/animate.css@3.5.2/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        /* @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+           50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        } */
+        /*1、 显示 */
+        /* .fadex-enter-active {
+            transform-origin: left center;
+            animation: bounce-in 1s;
+        } */
+
+        /* 2、.active {
+            transform-origin: left center;
+            animation: bounce-in 1s;
+        }  */
+
+        /* 1、隐藏 */
+        /* .fadex-leave-active {
+            animation: bounce-in 1s reverse;
+        } */
+
+        /*2、 .leave {
+            animation: bounce-in 1s reverse;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- 1、使用默认-->
+        <!-- <transition name="fadex">
+            <div v-if="show">hello world</div>
+        </transition> -->
+
+        <!-- 2、自定义.active 和 .leave -->
+        <!-- <transition name="fadex" enter-active-class="active" leave-active-class="leave">
+            <div v-if="show">hello world</div>
+        </transition> -->
+
+        <!-- 3、引用animate.css库文件 -->
+        <transition name="fadex" enter-active-class="animated swing" leave-active-class="animated shake">
+            <div v-if="show">hello world</div>
+        </transition>
+
+        <button @click="click">click</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                show: true
+            },
+            methods: {
+                click() {
+                    this.show = !this.show
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
