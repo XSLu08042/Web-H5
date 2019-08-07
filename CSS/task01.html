@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+		 <title>任务1:九宫格</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.all{
+				min-width: 258px;
+				margin:0 auto; 
+			}
+			div p{
+				padding-top: 31%;
+				width: 31%;
+				background: orange;
+				border-radius: 10%;
+				float: left;
+				margin: 1%;
+			}
+			.row2 p:nth-of-type(1), .row3 p:nth-of-type(1){
+				clear: both;
+				margin-left: 1.5%;
+			}
+			.row1 p:nth-of-type(1){
+				margin-left: 1.5%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="row1">
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<div class="row2">
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+			<div class="row3">
+				<p></p>
+				<p></p>
+				<p></p>
+			</div>
+		</div>
+	</body>
+</html>
