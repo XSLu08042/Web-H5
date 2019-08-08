@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+center {
+	display: none;
+}
+
+body {
+	background: #eef0f4;
+	font-size: 16px;
+}
+
+header {
+	background: #5ac0ce;
+	color: #FFFFFF;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+header span:nth-of-type(1) {
+	position: absolute;
+	left: 5px;
+}
+
+header span:nth-of-type(2) {
+	font-weight: bolder;
+}
+
+header span:nth-of-type(3) {
+	position: absolute;
+	right: 5px;
+}
+
+form{
+	margin-top: 50px;
+}
+form div {
+	height: 45px;
+	margin-top: 10px;
+	padding-left: 10px;
+	background: #FFFFFF;
+	line-height: 45px;
+}
+
+form div img {
+	vertical-align: middle;
+	height: 22px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #eef0f4;
+}
+
+input {
+	border: 0;
+	outline: none;
+	height: 30px;
+	line-height: 30px;
+}
+
+
+/*修改提示文字的颜色*/
+
+input::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #bababa;
+}
+
+input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #bababa;
+}
+
+input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #bababa;
+}
+
+input:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #bababa;
+}
+
+form button {
+	background: #5AC0CE;
+	width: 100%;
+	height: 45px;
+	margin-top: 10px;
+	border: 0;
+	outline: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+a {
+	color: #5AC0CE;
+	float: right;
+	margin: 10px;
+}
