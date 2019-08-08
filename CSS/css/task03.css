@@ -1,0 +1,49 @@
+*{
+				margin: 0;
+				padding: 0;
+			}
+			center{
+				display: none;
+			}
+			body{
+				font-size: 62.5%;  /*方便转换*/
+				background: #68cdd5;
+				color: white;
+			}
+			.header_bac img{	
+				height: 2.5em;		
+				margin: 1.5em 2em;
+			}
+			.content{
+				margin: 4.5em 15% 6em 15%;
+			}
+			.content img{
+				display: block;
+				margin: 0 auto 6em auto;
+				height: 4.5em;
+			}
+			.content p{
+				font-size: 2em;
+			}
+			.footer{
+				padding: 0% 15%;
+				display: flex;
+				justify-content:space-between;
+			}
+			.footer img{
+				height: 4em;
+				border-radius: 50%;
+				background: #009e96;
+			}
+			.footer-left, .footer-right{
+				height: 6em;
+				width: 6em;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items:center;
+			}
+			.footer-left p, .footer-right p{
+				font-size: 1.4em;
+			}
