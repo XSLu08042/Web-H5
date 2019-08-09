@@ -14,28 +14,35 @@ body {
 
 header {
 	background: #5ac0ce;
-	color: #FFFFFF;
 	height: 40px;
 	width: 100%;
 	line-height: 40px;
 	text-align: center;
+	color: #FFFFFF;
 	position: fixed;
-	left: 0px;
 	top: 0px;
 }
 
-header span:nth-of-type(1) {
+.close {
 	position: absolute;
+	float: left;
 	left: 5px;
+	color: #FFFFFF;
+	text-decoration: none;
 }
 
-header span:nth-of-type(2) {
+header h1 {
 	font-weight: bolder;
+	font-size: 16px;
+	color: #FFFFFF;
 }
 
-header span:nth-of-type(3) {
+.zhuce {
 	position: absolute;
+	float: right;
 	right: 5px;
+	color: #FFFFFF;
+	text-decoration: none;
 }
 
 form{
@@ -90,7 +97,7 @@ input:-ms-input-placeholder {
 form button {
 	background: #5AC0CE;
 	width: 100%;
-	height: 45px;
+	height: 945px;
 	margin-top: 10px;
 	border: 0;
 	outline: none;
@@ -99,7 +106,7 @@ form button {
 	font-weight: bolder;
 }
 
-a {
+.footer {
 	color: #5AC0CE;
 	float: right;
 	margin: 10px;
