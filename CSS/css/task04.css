@@ -66,9 +66,8 @@ form div img {
 }
 
 input{
-	box-sizing: border-box;
 	border: 0;
-    width: 100%;
+        width: 100%;
 	outline: none;
 	height: 30px;
 	line-height: 30px;
