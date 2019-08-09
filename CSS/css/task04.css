@@ -32,8 +32,8 @@ header {
 }
 
 header h1 {
-	font-weight: bolder;
 	font-size: 16px;
+	font-weight: bolder;
 	color: #FFFFFF;
 }
 
@@ -46,35 +46,35 @@ header h1 {
 }
 
 form{
+	width: 100%;
 	margin-top: 50px;
 }
-form div {
+form div {	
+	display: flex;
+	align-items: center;
 	height: 45px;
 	margin-top: 10px;
 	padding-left: 10px;
 	background: #FFFFFF;
-	line-height: 45px;
 }
 
 form div img {
-	vertical-align: middle;
 	height: 22px;
 	margin-right: 10px;
 	padding-right: 10px;
 	border-right: 1px solid #eef0f4;
 }
 
-input {
+input{
+	box-sizing: border-box;
 	border: 0;
+    width: 100%;
 	outline: none;
 	height: 30px;
-	width:88%;
 	line-height: 30px;
 }
 
-
 /*修改提示文字的颜色*/
-
 input::-webkit-input-placeholder {
 	/* WebKit browsers */
 	color: #bababa;
