@@ -1,3 +1,7 @@
+center {
+	display: none;
+}
+
 header {
 	height: 55px;
 	width: 100%;
@@ -22,7 +26,6 @@ header {
 	border: 0;
 	outline: none;
 	background: #FFFFFF;
-	border-bottom:1px solid #eee ;
 	color: #5AC0CE;
 	margin-left: -10px;
 }
@@ -51,6 +54,7 @@ header {
 	top:50px;
 	width: 100%;
 	background: #FFFFFF;
+	border-bottom:1px solid #eee ;
 	display: flex;	
 }
 
