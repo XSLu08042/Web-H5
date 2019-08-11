@@ -1,0 +1,192 @@
+header {
+	height: 55px;
+	width: 100%;
+	line-height: 55px;
+	text-align: center;
+	background: #5AC0CE;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+}
+
+.header-center button:nth-of-type(1) {
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: 0;
+	outline: none;
+	color: #FFFFFF;
+}
+
+.header-center button:nth-of-type(2) {
+	height: 38px;
+	border: 0;
+	outline: none;
+	background: #FFFFFF;
+	color: #5AC0CE;
+	margin-left: -10px;
+}
+
+.icon {
+	background-image: url(../img/task06img/css_sprites.png);
+}
+
+.header-right {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	width: 42px;
+	height: 44px;
+	background-position: -75px -10px;
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	-o-transform: scale(0.5);
+	transform: scale(0.5);
+}
+
+
+/*中间部分开始*/
+
+main {
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 55px;
+}
+
+.content-header {
+	width: 100%;
+	display: flex;
+}
+
+.content-header select {
+	cursor: pointer;
+	height: 55px;
+	flex: 1;
+	border: 0;
+	outline: none;
+	background: #FFFFFF;
+	text-align: center;
+	text-align-last: center;
+}
+
+.jianbian {
+	display: block;
+	height: 55px;
+	width: 1px;
+	background: linear-gradient(0deg, #fff, #ddd, #fff);
+}
+
+.data {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-position: -137px -71px;
+	margin-right: 5px;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
+}
+
+.address {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 5px;
+	background-position: -76px -75px;
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	-o-transform: scale(0.7);
+	transform: scale(0.7);
+}
+
+tbody tr td {
+	height: 100px;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.service {
+	color: #999;
+	display: flex;
+	align-items: center;
+}
+
+.date {
+	margin-left: 29px;
+	width: 50%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.price {
+	display: flex;
+    align-items: center;
+	color: red;
+	line-height: 100px;
+	margin-top: -9px;
+}
+
+/*footer 部分开始*/
+
+footer {
+	margin-top: 60px;
+	height: 55px;
+	width: 100%;
+	min-width: 280px;
+	background: #f8fafb;
+	color: #5AC0CE;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+}
+
+footer div {
+	width: 55px;
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer div i {
+	display: inline-block;
+	-webkit-transform: scale(0.65);
+	-moz-transform: scale(0.65);
+	-ms-transform: scale(0.65);
+	-o-transform: scale(0.65);
+	transform: scale(0.65);
+}
+
+.footer-write {
+	border-radius: 50%;
+	background: #5AC0CE;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-home-icon {
+	width: 46px;
+	height: 40px;
+	background-position: -10px -75px;
+}
+
+.footer-write-icon {
+	width: 45px;
+	height: 45px;
+	background-position: -10px -10px;
+}
+
+.footer-my-icon {
+	width: 42px;
+	height: 41px;
+	background-position: -137px -10px;
+}
