@@ -1,0 +1,170 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #5AC0CE;
+}
+
+header {
+	height: 55px;
+	width: 100%;
+	background: #5AC0CE;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+header img {
+	height: 25px;
+	margin: 0 15px;
+}
+
+.close {
+	height: 20px;
+}
+
+.content-header {
+	margin-top: 55px;
+	width: 100%;
+	height: 90px;
+	display: flex;
+	flex-direction: column;
+	background: #5AC0CE;
+	position: fixed;
+	z-index: 88;
+	top: 0;
+}
+
+.content-header div:nth-of-type(1) {
+	padding: 6px 10px 6px 40px;
+	background: #b9e9f5;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.content-header img {
+	height: 28px;
+}
+
+
+/*音频*/
+
+.content-header audio {
+	height: 28px;
+	position: absolute;
+	opacity: 0;
+	top: 9%;
+	right: -250px;
+	z-index: 88;
+}
+
+
+/**/
+
+.sanjiao {
+	width: 0px;
+	height: 0px;
+	margin-left: 45px;
+	border-top: 10px solid #b9e9f5;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+.desc {
+	color: #FFFFFF;
+	font-size: 14px;
+	padding: 5px 40px;
+}
+
+.content {
+	margin-top: 145px;
+	padding: 10px;
+}
+
+.content .row,
+.content .row2 {
+	display: flex;
+	justify-content: space-around;
+}
+
+.content .row .box,
+.content .row2 .box {
+	height: 25vw;
+	width: 25vw;
+	text-align: center;
+}
+
+.box p:nth-of-type(1) {
+	height: 17vw;
+	line-height: 17vw;
+	background-color: #f5c97b;
+	border: 3px solid #ffffff;
+	border-bottom: none;
+}
+
+.box p:nth-of-type(2) {
+	height: 7vw;
+	line-height: 7vw;
+	background: #83b09a;
+	border: 3px solid #ffffff;
+	border-top: none;
+	color: #FFFFFF;
+}
+
+.action {
+	height: 9vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.action img {
+	height: 5vw;
+}
+
+.box:hover .action {
+	display: flex;
+}
+
+.box .action {
+	display: none;
+}
+
+.content .row2 {
+	margin-top: 9vw;
+}
+
+.content .row2:last-of-type {
+	margin-bottom: 29vw;
+}
+
+footer {
+	background: #5AC0CE;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	position: fixed;
+	bottom: 0;
+}
+
+footer a{
+	flex: 1;
+	margin: 10px 30px;
+}
+.toubtn {
+	height: 45px;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: #f8b445;
+	font-size: 18px;
+	color: #FFFFFF;
+}
