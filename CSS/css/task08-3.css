@@ -32,7 +32,9 @@
 }
 /**/
 .table2{
+	width: 100%;
 	background: #FFFFFF;
+	table-layout: fixed !important;
 }
 .table2>tbody>tr>td{
     border: 1px solid #E6E6E6;
@@ -71,6 +73,9 @@ strong{
 /*薪资待遇*/
 .title_hui{
 	color: #a1a1a1;
+}
+.xinzi_title{
+	text-align: center;
 }
 .xinzi span:nth-of-type(2){
 	float: right;
