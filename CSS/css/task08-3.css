@@ -1,4 +1,14 @@
 /*任务8:修真院3CSS*/
+.content_topnav span{
+	padding: 5px;
+	border-radius: 5px;
+}
+.content_topnav span:hover{
+	background: #28B078;
+}
+.content_topnav span:nth-of-type(1):hover{
+	background: none;
+}
 .table1>tbody>tr>td{
 	font-size: 16px;
 	padding: 15px 5px !important;
