@@ -1,6 +1,7 @@
 body {
 	background: #fafafa !important;
 	font-size: 16px;
+	overflow: hidden;
 }
 
 /*top*/
