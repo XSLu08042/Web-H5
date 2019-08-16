@@ -160,12 +160,7 @@ footer .row div a{
 footer .row div a:hover{
 	border-bottom: 2px solid #FFFFFF;
 }
-.footer-left,.footer-zhong,.footer-right{
-	height: 100px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+
 
 .footer-left div,.footer-zhong div{
 	width: 220px;
@@ -216,6 +211,12 @@ footer .row div a:hover{
 		float: left;
 		margin: 10px 10px 0 0;
 	}
+	.footer-left,.footer-zhong,.footer-right{
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		margin-left: 10px;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -261,6 +262,12 @@ footer .row div a:hover{
 		height: 100px;
 		float: left;
 		margin: 0px 10px 0 0;
+	}
+	.footer-left,.footer-zhong,.footer-right{
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 }
