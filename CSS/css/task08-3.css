@@ -88,6 +88,11 @@ strong{
 .people_num span{
 	color: red;
 }
+/*提示*/
+.table2>tbody>tr:last-of-type{
+	word-break: break-all;
+	text-align: justify;
+}
 /*hover效果*/
 .zhe{
 	width: 100%;
