@@ -38,6 +38,7 @@ body {
 
 .wbo {
 	background-position: -459px -62px;
+	margin-right: 12px;
 }
 
 .qq {
@@ -192,6 +193,9 @@ footer .row div a:hover{
 	}
 }
 @media screen and (max-width: 767.9px) {
+	.wbo{
+		margin-right: 0px;
+	}
 	.top_right {
 		padding-right: 0 !important;
 	}
