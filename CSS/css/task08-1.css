@@ -230,3 +230,8 @@
 		display: none;
 	}
 }
+@media screen and (max-width: 1200px){
+	.jiantou_icon{
+		margin-left: -120px
+	}
+}
