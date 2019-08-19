@@ -2,6 +2,10 @@
 .gray{
 	color: #c0c0c0;
 }
+.carousel-inner img{
+	height: 100%;
+	width: 100%;
+}
 .container-fluid{
 	padding-left: 0 !important;
 	padding-right: 0 !important;
@@ -10,12 +14,11 @@
 	background-color: #28B078 !important;
 }
 .contenr_row1{
+	height: 250px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 250px;
-	margin-top: 50px;
-	padding: 30px 30px !important;
+	justify-content: center;
 }
 .contenr_row1_pic{
 	width: 62px;
@@ -41,14 +44,18 @@
 	font-weight: bolder;
 }
 .contenr_row1_desc{
+	width: 210px;
 	text-align: justify;
 	word-break: break-all;
 }
+.guifan{
+	text-align: center;
+}
+
 /*第一行最后一个*/
 .contenr_row1_04{
 	margin-top: 50px;
 	height: 250px;
-	padding: 25px 0 !important;
 }
 .contenr_row1last{
 	height: 200px;
@@ -72,7 +79,7 @@
 }
 .contenr_row1last div{
 	margin-bottom: 10px;
-	margin-left: 15px;
+	margin-left: 30px;
 }
 /*如何学习*/
 .row_title{
@@ -82,8 +89,11 @@
 }
 .contenr_row2{
 	display: flex;
-	padding: 15px 0;
+	height: 80px;
+	align-items: center;
+	justify-content: center;
 }
+
 .contenr_row2_item01{
 	margin-left: 10px;
 	width: 50px;
@@ -97,8 +107,8 @@
 	margin-right: 15px;
 }
 .contenr_row2_item2{
-	margin-top: 8px;
 	margin-right: 20px;
+	width: 168px;
 	text-align: justify;
 	word-break: break-all;
 }
@@ -109,8 +119,7 @@
    	background-image: url(../img/task08img/task08_1sprite.png);
    	transform: scale(0.8);
    	position: absolute;
-   	margin-left: -35px;
-   	margin-top: 11px;
+   	margin-left: -150px;
 }
 /*优秀学员*/
 .contenr_row3{
@@ -194,21 +203,30 @@
 		border-radius: 50%;
 		margin-right: 15px;
 	}
-	.jiantou_icon{
-		display: none;
-	}
-	.contenr_row3{
-		margin-top: 20px;
-	}
 	.dian{
 		bottom: -70px !important;
 	}
 	.zhanlue_pic{
 		margin: 0 10% !important;
 	}
-	.youqing,.youqing_title{
-		display: none;
+	.contenr_row1last{
+		border: none;
+		align-items: center;
+	}
+	.contenr_row1last div{
+		margin-left: 0px;
 	}
 
 }
 
+@media screen and (max-width: 992px) {
+	.jiantou_icon{
+		display: none;
+	}
+	.contenr_row3{
+		margin-top: 20px;
+	}
+	.youqing,.youqing_title{
+		display: none;
+	}
+}
