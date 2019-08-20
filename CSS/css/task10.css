@@ -423,6 +423,9 @@ footer {
 	.content_top{
 		justify-content: flex-end;
 	}
+	.xuanzhe label{
+		font-size: 12px;
+	}
 	/*确定尺寸*/
 	.content1_c2{
 		display: flex;
