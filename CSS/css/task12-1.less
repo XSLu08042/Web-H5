@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+  min-width: 280px;
+}
+@zhutiColor:#5ac0ce;
+
+header {
+  height: 45px;
+  width: 100%;
+  min-width: 280px;
+  background: @zhutiColor;
+  color: #ffffff;
+  font-weight: bolder;
+  line-height: 45px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  i {
+      position: absolute;
+      left: 10px;
+      color: #FFFFFF !important;  
+      transform:rotate(180deg);   
+    }
+}
+main {
+  margin-top: 45px;
+  margin-bottom: 56px;
+}
+.content-top {
+  overflow: hidden;
+}
+.zhe {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 200px;
+  background: black;
+  opacity: 0.2;
+  filter: alpha(opacity=60);
+}
+.bg {
+  img {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    min-height: 190px;
+    max-height: 380px;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+  }
+}
+.content-header {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: #ffffff;
+}
+.touxiang {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 50%;
+  background: #fff;
+}
+.addrees {
+  height: 20px;
+  margin-top: 5px;
+  font-size: 12px;
+  display: flex;
+  img {
+    height: 18px;
+    margin-right: 10px;
+  }
+}
+/*专业技能部分开始*/
+.content-body-title {
+  background: #ffffff;
+  height: 44px;
+  line-height: 45px;
+  padding-left: 10px;
+  border-bottom: 1px solid #bababa;
+  font-size: 12px;
+  span {
+    border-left: 3px solid @zhutiColor;
+    padding-left: 10px;
+  }
+}
+.content-body {
+  background: #ffffff;
+  p {
+    margin: 0 10px;
+    padding: 14px 10px;
+    border-bottom: 1px solid #bababa;
+    font-size: 12px;
+    span {
+      &:nth-of-type(1) {
+        white-space: nowrap;
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #888888;
+        color: #888888;
+      }
+    }
+    &:nth-of-type(1) {
+      display: flex;
+      align-items: center;
+      padding-left: 0;
+      img {
+        height: 12px;
+        margin: 0 5px 0 10px;
+      }
+    }
+    &:nth-of-type(4) {
+      color: red;
+    }
+    &:nth-of-type(5) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+/*底部开始*/
+footer {
+  height: 55px;
+  width: 100%;
+  min-width: 280px;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  button {
+    flex: 1;
+    height: 45px;
+    border: 2px solid @zhutiColor;
+    border-radius: 7px;
+    background: #ffffff;
+    outline: none;
+    font-size: 16px;
+    &:nth-of-type(1) {
+      color: @zhutiColor;
+      margin: 0 10px;
+    }
+    &:nth-of-type(2) {
+      color: #ffffff;
+      background: @zhutiColor;
+      margin-right: 10px;
+    }
+  }
+}
