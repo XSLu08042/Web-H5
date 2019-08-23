@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f0f0f0;
+  width: 100%;
+  overflow: hidden;
+}
+@baiColor: #FFFFFF;
+@borderColor: #cbcbcb;
+.flexJuzhong{
+    display: flex;
+    align-items: center;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+.nav {
+  position: absolute;
+  height: 100%;
+  width: 45vw;
+  left: -50vw;
+  margin-top: 55px;
+  border-top: 1px solid @borderColor;
+  background: @baiColor;
+  a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    border-bottom: 1px solid @borderColor;
+    .flexJuzhong();
+    justify-content: space-between;
+    &:hover {
+      background: #5ac0ce;
+      .iconfont {
+        color: @baiColor;
+      }
+    }
+    .iconfont {
+      display: flex;
+      span {
+        font-size: 18px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+input[type="checkbox"]:checked {
+  & ~ .nav {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    left: 0;
+  }
+  & ~ main {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translateX(50vw);
+    -ms-transform: translateX(50vw);
+    transform: translateX(50vw);
+  }
+}
+header {
+  height: 55px;
+  width: 100%;
+  padding-left: 15px;
+  background: #5ac0ce;
+  .flexJuzhong();
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  img {
+    height: 20px;
+  }
+}
+.iconfont2 {
+  color: #e7e7e7 !important;
+  font-weight: bolder;
+  font-size: 20px !important;
+  float: right;
+  margin-right: 10px;
+}
+main {
+  width: 100%;
+  margin-top: 55px;
+}
+.content-header {
+  display: block;
+  height: 53px;
+  margin: 15px;
+  text-align: center;
+  line-height: 53px;
+  background: @baiColor;
+  color: #9a9a9a;
+  border: 1px solid @borderColor;
+  &:hover {
+    background: #5ac0ce;
+    color: @baiColor;
+  }
+}
+.content {
+  background: @baiColor;
+  margin: 15px;
+  border: 1px solid @borderColor;
+  text-align: center;
+  p {
+    font-size: 14px;
+  }
+}
+h3 {
+  height: 52px;
+  text-align: center;
+  line-height: 52px;
+  border-bottom: 1px solid #fbb435;
+  color: #fbb435;
+  margin-bottom: 10px;
+}
+.content-body {
+  display: flex;
+  flex-direction: column;
+}
+.version {
+  height: 60px;
+  background: #5ac0ce;
+  margin: 10px 25px 10px 25px;
+  line-height: 60px;
+  color: @baiColor;
+}
+.next {
+  img {
+    height: 25px;
+    position: absolute;
+    right: 15px;
+    margin-top: -53px;
+  }
+}
+.content-footer {
+  height: 20px;
+  .flexJuzhong();
+  justify-content: center;
+  a {
+    height: 7px;
+    width: 7px;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: @borderColor;
+    &:hover {
+      background: #5ac0ce;
+    }
+  }
+}

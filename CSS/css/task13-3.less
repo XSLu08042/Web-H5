@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@baiColor: #FFFFFF;
+.flexJuzhong{
+	display: flex;
+  	align-items: center;
+}
+header {
+  height: 54px;
+  width: 100%;
+  border-bottom: 1px solid #cbcbcb;
+  background: #5ac0ce;
+  .flexJuzhong();
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  color: @baiColor;
+  font-size: 20px;
+  img {
+    height: 25px;
+    margin: 0 15px;
+  }
+}
+main {
+  margin-top: 55px;
+  padding: 10px 30px;
+  background: #5ac0ce;
+  div {
+    &:nth-of-type(1) {
+      .flexJuzhong();
+      flex-direction: column;
+    }
+    .winer {
+      position: absolute;
+      margin: 0 auto;
+      top: 131px;
+      font-size: 22px;
+      font-weight: bolder;
+      color: @baiColor;
+    }
+  }
+}
+.jieguo {
+  height: 100px;
+}
+.jieguo-text {
+  margin: 10px 0px;
+  color: #fbb435;
+  font-size: 20px;
+  font-weight: border;
+}
+.jieguo-desc {
+  margin-top: 15px;
+  color: @baiColor;
+  p {
+    margin: 3px;
+    span {
+      flex: 1;
+    }
+  }
+}
+.jieguo-desc p:nth-of-type(2), .jieguo-desc p:nth-of-type(3) {
+  display: flex;
+  justify-content: space-between;
+}
+.table {
+  margin-bottom: 66px;
+  width: 100%;
+  min-width: 100%;
+  border-spacing: 0;
+  font-size: 14px;
+  tbody {
+    tr {
+      td {
+        padding: 10px 30px !important;
+        border-top: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        color: #9a9a9a;
+        div {
+          &:nth-of-type(1) {
+            .flexJuzhong();
+            justify-content: space-between;
+            margin-bottom: 10px;
+          }
+          span {
+            flex: 1;
+            &:nth-of-type(1) {
+              font-size: 18px;
+              color: #000000;
+            }
+            &:nth-of-type(2) {
+              color: #cbcbcb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*底部开始*/
+footer {
+  height: 60px;
+  width: 100%;
+  background: rgba(99,212,227,0.5);
+  position: fixed;
+  bottom: 0;
+  .flexJuzhong();
+  a {
+    flex: 1;
+    margin: 0px 20px;
+  }
+  button {
+    width: 100%;
+    height: 45px;
+    border: 0;
+    outline: none;
+    border-radius: 7px;
+    font-size: 16px;
+    color: @baiColor;
+  }
+}
+.btn1 {
+  background: #f37072;
+}
+.share {
+  background: #f8b445;
+}
