@@ -1,0 +1,134 @@
+.content{
+	width: 100%;
+}
+.content_top {
+	line-height: 40px;
+}
+
+.content_top span:last-of-type {
+	color: #29b078;
+}
+
+aside {
+	background: #FFFFFF;
+	border: 1px solid #e6e6e6 !important;
+}
+
+aside div {
+	height: 39px;
+	line-height: 39px;
+	text-align: center;
+	border-bottom: 1px solid #e6e6e6;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+aside ul {
+	margin: 10px 0;
+	padding-left: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+aside ul li {
+	width: 100px;
+	padding: 10px;
+	line-height: 20px;
+	color: #29b078;
+	list-style-image: url(../img/task08img/empty.png);
+}
+
+aside ul li a {
+	color: #29B078 !important;
+	text-decoration: none !important;
+	outline: none;
+}
+aside ul li a:hover{
+	color: #F8B445 !important;
+}
+aside ul li:hover {
+	list-style-image: url(../img/task08img/solid.png);
+}
+
+
+/*右边内容*/
+
+article {
+	background: #FFFFFF;
+	border: 1px solid #e6e6e6;
+	color: #999999;
+	text-align:justify;
+	letter-spacing:1px;
+}
+.desc{
+	border-bottom: 1px solid #e6e6e6;
+}
+.article_content{
+	padding: 30px 40px 120px 40px;
+}
+.article_content p{
+	margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+	/*广告*/
+	.ad {
+		height: 15vw;
+		background: url(../img/task08img/recommend.png) no-repeat center;
+		background-size: cover;
+	}
+	.content-right{
+		margin: 15px 0;		
+	}
+	.desc {
+		padding: 15px 40px;
+	}
+	.desc img {
+		width: 110px;
+		height: 70px;
+		float: left;
+		margin: 10px 10px 0 0;
+	}
+}
+@media screen and (min-width: 768px){
+	.content_top{
+		margin-left: 20px;
+	}
+	aside {
+		margin: 0 15px;
+	}
+	article {
+		margin: 15px 15px;
+	}
+	/*右边内容*/
+	.desc {
+		height: 120px;
+		padding: 15px 40px;
+	}
+	.desc img {
+		width: 130px;
+		height: 100px;
+		float: left;
+		margin: 0px 10px 0 0;
+	}
+}
+@media screen and (min-width: 768.1px) {
+	/*广告*/
+	.ad {
+		height: 15vw;
+		background: url(../img/task08img/recommend.png) no-repeat center;
+		background-size: cover;
+	}
+	.content-left{
+	    float: left;
+		width: 25%;	
+	}
+	.content-right{
+		float: left;
+		width: 75%;
+	}
+	article{
+		margin-top: 0;
+		margin-bottom: 150px;
+	}
+}

@@ -1,0 +1,125 @@
+/*任务8:修真院3CSS*/
+table{
+   padding: 0 40px;
+}
+.item{
+	padding: 0 10px;
+	position: relative;
+}
+.content_top span:last-of-type {
+	color: #29b078;
+}
+.content_topnav span{
+	padding: 5px;
+	border-radius: 5px;
+}
+.content_topnav span:hover{
+	background: #28B078;
+}
+.content_topnav span:nth-of-type(1):hover{
+	background: none;
+}
+.table1>tbody>tr>td{
+	font-size: 16px;
+	padding: 15px 5px !important;
+}
+.table1>tbody>tr:nth-of-type(1) td{
+	height: 50px;
+	line-height: 50px;
+	border-top: none;
+}
+.table1>tbody>tr:nth-of-type(3) td{
+	height: 50px;
+	line-height: 50px;
+	font-weight: bolder;
+}
+.div1,.div2,.div3{	
+	margin-bottom: 15px;
+}
+.div4{
+	padding: 10px 0;
+	font-weight: bolder;
+}
+/**/
+.table2{
+	background: #FFFFFF;
+	table-layout: fixed !important;
+}
+.table2>tbody>tr>td{
+    border: 1px solid #E6E6E6;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.item_desc{
+	padding: 15px 10px !important;
+	word-break: break-all;
+	font-size: 14px !important;
+} 
+strong{
+	font-size: 16px;
+}
+.item_desc p{
+	margin: 10px 0;
+	text-align: justify;
+}
+.item_desc img{
+	width: 40%;
+	float: left;
+	margin: 0 10px 3px 0;
+}
+/**/
+.title span:nth-of-type(1){
+	color: #a1a1a1;
+}
+.title img{
+	height: 13px;
+	margin-top: -3px;
+	margin-left: 5px;
+}
+.title span:nth-of-type(2){
+	color: red;
+}
+/*薪资待遇*/
+.title_hui{
+	color: #a1a1a1;
+}
+.xinzi_title{
+	text-align: center;
+}
+.xinzi span:nth-of-type(2){
+	float: right;
+}
+
+.people_num{
+	font-size: 14px !important;
+	font-weight: bold;
+}
+.people_num span{
+	color: red;
+}
+/*提示*/
+.table2>tbody>tr:last-of-type{
+	word-break: break-all;
+	text-align: justify;
+}
+/*hover效果*/
+.zhe{
+	position: absolute;
+	height: 80%;
+	padding: 40px 30px;
+	background: rgba(61, 61, 61, 0.8);
+	color: #FFFFFF;
+	text-align: justify;
+	opacity: 0;
+	transition:opacity 2s;
+	-moz-transition:opacity 2s; /* Firefox 4 */
+	-webkit-transition:opacity 2s; /* Safari and Chrome */
+	-o-transition:opacity 2s; /* Opera */
+}
+.zhe p:nth-of-type(1){
+	text-align: center;
+}
+
+.zhe:hover{
+	opacity: 1;
+}
