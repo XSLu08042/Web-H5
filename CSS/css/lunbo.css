@@ -162,7 +162,7 @@
   border-radius: 50%;
 }
 .viewport2 .label_circle2 label:nth-of-type(1){
-  animation: circle01 linear 12s infinite 0s normal;
+  animation: circle01 linear 10s infinite 0s normal;
 }
 @keyframes circle01 {
   0%,
