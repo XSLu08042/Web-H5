@@ -1,0 +1,151 @@
+/*top*/
+.top_right {
+	height: 35px;
+	float: right;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.top {
+	height: 35px;
+	line-height: 35px;
+}
+
+.kefu {
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #29b078;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	margin: 0 5px;
+	background: url(../img/task08img/task08_sprite.png);
+}
+
+.wx {
+	background-position: -509px -62px;
+}
+
+.wbo {
+	background-position: -459px -62px;
+}
+
+.qq {
+	background-position: -484px -62px;
+}
+/*导航*/
+.navbar{
+	background: #28B078;
+}
+.navbar-log img{
+	width: 66.25px;
+	height: 30px;
+	vertical-align: middle;
+}
+/**/
+#check{
+	opacity: 0;
+}
+input:checked+.navbar-collapse{
+	height: 160px;
+	width: 100%;
+	padding: 15px 0;
+	border-top: 1px solid #CCCCCC;
+}
+@media (min-width: 1200px){
+
+}
+@media (min-width: 768px){	
+	.kefu{
+		margin-left: 20px;
+	}
+	.top_right{
+		margin-right: 20px;
+	}
+	.navbar{
+		overflow: hidden;
+		height: 70px;
+		line-height: 70px;	
+		padding-left: 30px;
+	}
+	.navbar-nav{
+		margin-right: 25px;
+	}
+	.navbar-btn{
+		display: none;
+	}
+	.navbar-collapse{
+		display: block;
+	}
+	.navbar-collapse ul{
+		float: right;
+		margin-top: -70px;
+	}
+	.navbar-collapse ul li{
+		float: left;
+		width: 80px;
+		height: 65px;
+		text-align: center;
+	}
+	.navbar-collapse ul li a{
+		font-size: 16px;
+		color: #FFFFFF;
+	}
+	.navbar-collapse ul li:hover{
+		border-bottom: 5px solid #FFFFFF;
+	}
+}
+@media (min-width: 992px){
+	.navbar{
+		padding-left: 35px;
+	}
+	.navbar-nav{
+		margin-right: 20px;
+	}
+}
+@media screen and (max-width:767.9px){
+	/*nav*/
+	.wbo{
+		margin-right:0;
+	}
+	.navbar{
+		line-height: 50px;
+		background: #28B078;
+	}
+	.navbar2{	
+		background: #28B078;
+	}
+	.navbar-btn{
+		float: right;
+	}
+	.navbar-collapse{
+        overflow: hidden;/*必须用overflow,不然内容会挤出去，就算设置高度为零也没意义*/
+        height:0;
+		width: 100%;
+        transition: 1s;
+        background: #28B078;
+	}
+	.navbar-collapse ul li{
+		padding: 10px;
+		line-height: 20px;
+		text-align: center;
+		background: #28B078;
+	}
+	.navbar-collapse ul li:hover{
+		background: #38C58A;
+	}
+	.navbar-collapse ul li a{
+		color: #FFFFFF;
+	}
+}
+@media screen and (max-width: 425px){
+	.kefu{
+		position: absolute;
+		font-size: 10px ;
+	}
+}
